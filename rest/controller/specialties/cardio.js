@@ -3,7 +3,7 @@
 * 
 * (C) João Carlos Pandolfi Santana - 15/10/2017
 */
-var Especialty = require( '../especialty' );
+var Especialty = require( '../specialty' );
 
 //Herança
 var Cardio = Object.create(Especialty);
