@@ -2,14 +2,7 @@ module.exports = function (app) {
 
 	var rx = require( '../../libs/regex_patterns' );
 	var cardio = require( '../../controller/specialties/cardio' );
-
-	//base Route
-	var base_route  = "/esp/cardio/{req}";
-	var requisitions= {
-		new: {anamnese: "new/anamnese/"},
-		search: {anamnese: "search/anamnese/"}
-	};
-
+	
 	//==> Routes
 	
 	//New
