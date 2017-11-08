@@ -1,0 +1,681 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"get",
+				"getUrlVars"
+			],
+			[
+				"im",
+				"imageId"
+			],
+			[
+				"ima",
+				"imageUrl"
+			],
+			[
+				"s",
+				"service"
+			],
+			[
+				"ca",
+				"callUrl"
+			],
+			[
+				"ser",
+				"servicesAPI"
+			],
+			[
+				"call",
+				"callUrl"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"se",
+				"services"
+			],
+			[
+				"consu",
+				"consumeAPI"
+			],
+			[
+				"ap",
+				"apiKey"
+			],
+			[
+				"prin",
+				"println"
+			],
+			[
+				"data",
+				"database"
+			],
+			[
+				"da",
+				"database"
+			],
+			[
+				"uplo",
+				"uploadImage"
+			],
+			[
+				"cen",
+				"align-content"
+			],
+			[
+				"spl",
+				"splitParams"
+			],
+			[
+				"st",
+				"style\tTag"
+			],
+			[
+				"portfolioModalCa",
+				"portfolioModalCabecaPescoco"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"img-",
+				"img-rounded"
+			],
+			[
+				"on",
+				"onDayClicked"
+			],
+			[
+				"agenda",
+				"agendaDay"
+			],
+			[
+				"image",
+				"image_name"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"search",
+				"searchOnBd"
+			],
+			[
+				"anex",
+				"anexos_param"
+			],
+			[
+				"tex",
+				"texto_param"
+			],
+			[
+				"tit",
+				"titulo_param"
+			],
+			[
+				"te",
+				"text3"
+			],
+			[
+				"flush",
+				"flushSql"
+			],
+			[
+				"especia",
+				"especiality_name"
+			],
+			[
+				"sessionna",
+				"sessionNavigation"
+			],
+			[
+				"make",
+				"makeAnexo"
+			],
+			[
+				"eta",
+				"etapa2"
+			],
+			[
+				"genera",
+				"generateForm"
+			],
+			[
+				"tabe",
+				"tableContent"
+			],
+			[
+				"tab",
+				"tableHeader"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"loca",
+				"locationTab"
+			],
+			[
+				"hea",
+				"healthInsuranceTab"
+			],
+			[
+				"ac",
+				"action\tAttr"
+			],
+			[
+				"main",
+				"main_test.html"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"generate",
+				"generateFooter"
+			],
+			[
+				"comp",
+				"completeMenu"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"id",
+				"iduser"
+			],
+			[
+				"sigla",
+				"siglaEstado"
+			],
+			[
+				"idese",
+				"idespecialide"
+			],
+			[
+				"tam",
+				"tamArray"
+			],
+			[
+				"p",
+				"p_chave"
+			],
+			[
+				"p_co",
+				"p_coluna1"
+			],
+			[
+				"th",
+				"this"
+			],
+			[
+				"j",
+				"join"
+			],
+			[
+				"inc",
+				"include"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"array_un",
+				"array_unshift"
+			],
+			[
+				"local",
+				"localhost"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 215.0,
+		"last_filter": "ss javas",
+		"selected_items":
+		[
+			[
+				"ss javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ss c",
+				"Set Syntax: C++"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"ss php",
+				"Set Syntax: PHP"
+			],
+			[
+				"ss as",
+				"Set Syntax: ASP"
+			],
+			[
+				"ss c#",
+				"Set Syntax: C#"
+			],
+			[
+				"ssht",
+				"Set Syntax: HTML (Tcl)"
+			]
+		],
+		"width": 490.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/joaop/Projetos/Emescam/octopus-med"
+	],
+	"file_history":
+	[
+		"/C/Users/joaop/Projetos/IA/ConvJs/test.js",
+		"/C/Users/joaop/Projetos/IA/myRna/analise_geral.py",
+		"/C/Users/joaop/Google Drive/Programação/Zueira/wppweb/hack/getlocalstorage.js",
+		"/C/Users/joaop/Google Drive/Programação/Zueira/wppweb/extension/manifest.json",
+		"/C/Users/joaop/Projetos/IA/ConvJs/reiforcement/style.css",
+		"/C/Users/joaop/Projetos/Unimed/OCR/test2.py",
+		"/C/Users/joaop/Google Drive/Programação/Zueira/wppweb/extension/background.js",
+		"/C/Users/joaop/Google Drive/Programação/Zueira/wppweb/extension/inject/imgInject.js",
+		"/C/Users/joaop/Projetos/IA/ConvJs/reiforcement/index.html",
+		"/C/Users/joaop/Projetos/Freela/Alexandre/gama-carros/index.html",
+		"/C/Users/joaop/Google Drive/Programação/Zueira/wppweb/hack/test.php",
+		"/C/Users/joaop/Google Drive/Programação/Zueira/wppweb/hack/setLocalStorage.js",
+		"/C/Users/joaop/Google Drive/Programação/Zueira/wppweb/hack/app_wpp.js",
+		"/C/Users/joaop/Google Drive/Programação/Zueira/wppweb/hack/test2.php",
+		"/C/Users/joaop/Projetos/Unimed/OCR/test.py",
+		"/C/Users/joaop/Projetos/Emescam/Medicina-interativa/jitsu-extension/jidesha/chrome/background.js",
+		"/C/Users/joaop/Projetos/IA/ConvJs/reiforcement/script.js",
+		"/C/Users/joaop/Projetos/IA/mxnet/incubator-mxnet-master/Makefile",
+		"/C/Users/joaop/Projetos/Emescam/Medicina-interativa/jitsu-extension/jidesha/chrome/manifest.json",
+		"/C/Users/joaop/Desktop/Arduino Due.inf",
+		"/C/Program Files (x86)/Arduino/lib/formatter.conf",
+		"/C/Program Files (x86)/Arduino/revisions.txt",
+		"/C/Program Files (x86)/Arduino/arduino_debug.l4j.ini",
+		"/C/Program Files (x86)/Arduino/arduino.l4j.ini",
+		"/C/Program Files (x86)/Arduino/drivers/arduino.inf",
+		"/C/Program Files (x86)/Arduino/lib/preferences.txt",
+		"/C/Program Files (x86)/Arduino/wrapper-manifest.xml",
+		"/C/Users/joaop/Projetos/Emescam/PeDiabetico/pediabeticobot/README.md",
+		"/C/Users/joaop/Projetos/Emescam/PeDiabetico/pediabeticobot/libs/interface.js",
+		"/C/Users/joaop/Projetos/Emescam/PeDiabetico/pediabeticobot/constants/servicesAPI.js",
+		"/C/Users/joaop/Projetos/Emescam/PeDiabetico/pediabeticobot/libs/telegramAPI.js",
+		"/C/Users/joaop/Projetos/Emescam/PeDiabetico/pediabeticobot/server.js",
+		"/C/Users/joaop/Projetos/Emescam/PeDiabetico/pediabeticobot/app.js",
+		"/C/Users/joaop/Projetos/Emescam/PeDiabetico/pediabeticobot/test.py",
+		"/C/Users/joaop/Projetos/Emescam/PeDiabetico/pediabeticobot/server-https.js",
+		"/C/Users/joaop/Projetos/IA/ConvJs/reinforcement.js",
+		"/C/Users/joaop/Projetos/Emescam/PeDiabetico/pediabeticobot/package.json",
+		"/C/Users/joaop/Projetos/Emescam/iDomed/health-dome/health-dome/leito.ino",
+		"/C/Users/joaop/Desktop/presenca 28-9-17",
+		"/C/Users/joaop/Projetos/IA/ConvJs/convnetjs.txt",
+		"/C/Users/joaop/Projetos/IA/ConvJs/deepqlearn.js",
+		"/C/Users/joaop/Projetos/Emescam/Medicina-interativa/git/internal/rest/anamnese.php",
+		"/C/Users/joaop/Projetos/Emescam/Medicina-interativa/git/internal/rest/image_upload.php",
+		"/C/Users/joaop/Projetos/Emescam/Medicina-interativa/git/internal/elements/new_anamnese.php",
+		"/C/Users/joaop/Projetos/Emescam/Medicina-interativa/git/internal/elements/response_consult.php",
+		"/C/Users/joaop/Projetos/Emescam/Medicina-interativa/git/internal/helper/style.css",
+		"/C/Users/joaop/Projetos/Emescam/Medicina-interativa/git/internal/asset/js/login.js",
+		"/C/Users/joaop/Projetos/Emescam/Medicina-interativa/git/internal/asset/css/login.css",
+		"/C/Users/joaop/Projetos/Emescam/Medicina-interativa/git/internal/asset/css/style.css",
+		"/C/Users/joaop/Projetos/Emescam/Medicina-interativa/git/external/index.html",
+		"/C/Users/joaop/Projetos/Emescam/Medicina-interativa/git/internal/libs/bd_manip.php",
+		"/C/Users/joaop/Projetos/Emescam/Medicina-interativa/git/internal/example.php",
+		"/C/Users/joaop/Projetos/Emescam/Medicina-interativa/git/internal/.htaccess",
+		"/C/Users/joaop/Projetos/Emescam/Medicina-interativa/git/internal/helper/bbb-room.html",
+		"/I/Gitlab/medicina_interativa/internal/helper/crypto-sha1-2.5.3.js",
+		"/I/Gitlab/medicina_interativa/internal/helper/bigbluebutton-api.js",
+		"/I/Gitlab/medicina_interativa/internal/helper/bootstrap.min.css",
+		"/I/Gitlab/medicina_interativa/internal/helper/API Mate.html",
+		"/I/Gitlab/medicina_interativa/internal/helper/API Mate_files/bigbluebutton-api.js",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/libs/bd_manip.php",
+		"/home/joao/Projetos/Emescam/medicina_interativa/database/sql/fisico.sql",
+		"/home/joao/Projetos/Emescam/medicina_interativa/database/sql/inserts.sql",
+		"/home/joao/Projetos/Emescam/medicina_interativa/database/sql/functions.sql",
+		"/home/joao/Projetos/Emescam/medicina_interativa/external/css/agency.min.css",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/asset/css/login.css",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/asset/js/login.js",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/asset/css/style.css",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/login.php",
+		"/home/joao/Área de Trabalho/css/style.css",
+		"/home/joao/Área de Trabalho/index.html",
+		"/home/joao/Projetos/Emescam/medicina_interativa/external/index.html",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/elements/new_anamnese.php",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/elements/new_pacient.php",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/login-test.html",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/asset/js/main.js",
+		"/home/joao/Projetos/Emescam/medicina_interativa/external/css/agency.css",
+		"/home/joao/Projetos/Emescam/medicina_interativa/external/vendor/bootstrap/css/bootstrap.min.css",
+		"/home/joao/Projetos/Emescam/medicina_interativa/external/js/jqBootstrapValidation.js",
+		"/home/joao/Projetos/Emescam/medicina_interativa/external/js/agency.js",
+		"/home/joao/Projetos/Emescam/medicina_interativa/external/vendor/bootstrap/js/bootstrap.js",
+		"/home/joao/Projetos/Emescam/medicina_interativa/external/vendor/bootstrap/js/bootstrap.min.js",
+		"/home/joao/Projetos/Emescam/medicina_interativa/external/vendor/jquery/jquery.min.js",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/example.php",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/main.php",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/libs/bbb_gestor.php",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/libs/extra_functions.php",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/.htaccess",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/asset/js/plugins/jquery.steps.min.js",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/asset/js/new_pacient.js",
+		"/home/joao/Projetos/Emescam/medicina_interativa/external/js/agency.min.js",
+		"/home/joao/Projetos/Emescam/medicina_interativa/external/vendor/bootstrap/css/bootstrap.css",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/elements/telepres/show_calls.php",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/calendar_test.html",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/libs/access_control.php",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/libs/functions.php",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/elements/telepres/new_call.php",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/elements/navbar.php",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/factoryes/telepres/telepres_client_factory.php",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/elements/show_consults.php",
+		"/home/joao/Projetos/Emescam/medicina_interativa/database/inserts.sql",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/asset/js/plugins/handsontable.full.min.js",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/rest/insert_pacients.php",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/elements/view_consults.php",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/elements/menu_lateral.php",
+		"/home/joao/Projetos/Emescam/medicina_interativa/internal/elements/telepres/menu_lateral.php",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/.htaccess",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/asset/js/response_anamnese.js",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/asset/js/login.js",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/elements/response_consult.php",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/elements/new_pacient.php",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/Readme.md",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/elements/navbar.php",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/main.php",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/elements/new_anamnese.php",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/elements/search_pacient.php",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/elements/show_consults.php",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/elements/view_consults.php",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/elements/main_view.php",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/login.php",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/asset/css/style.css",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/libs/image_upload.php",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/login.html",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/asset/js/new_anamnese.js",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/asset/js/new_pacient.js",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/libs/index.html",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/404.html",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/libs/bd_manip.php",
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/rest_login.php"
+	],
+	"find":
+	{
+		"height": 32.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\t",
+			"openc",
+			"\n",
+			"    ",
+			"size",
+			"font",
+			"]",
+			"data",
+			"callUrl",
+			"params",
+			"callback",
+			"base",
+			"inActivatedTime",
+			"nuidPICC",
+			"cleanCard",
+			"checkSameCard",
+			"cleanCard",
+			"closeConnection",
+			"writeCard",
+			"cleanCard",
+			"close",
+			"TE",
+			"TEST",
+			"checkSameCard",
+			" class 1",
+			"database",
+			"none",
+			"md5",
+			"therms",
+			".navbar-custom",
+			"Q_Consultoria",
+			"fina",
+			"gotoLogin",
+			"img/portfolio/Q_Consultoria.jpg",
+			"http://medicinainterativa.com/telconsult/home/",
+			"main",
+			"Q_Diagnostico",
+			".portfolio-modal .modal-content",
+			"Q_Consultoria",
+			"Q_EAD",
+			"Q_Diagnostico",
+			".fade",
+			"portfolio-hover",
+			"rouded",
+			"rounded",
+			"portfolio-hover\"",
+			"rouded",
+			"portfolio-hover-content",
+			"portfolio",
+			"Portfolio",
+			"portfolio",
+			"Portfolio",
+			"portfolio",
+			"Portfolio",
+			"portfolio",
+			"portfolio-hover-content",
+			"rouded",
+			"roudend",
+			"img-circle",
+			"img-res",
+			"img-responsive",
+			"xs-3",
+			"servi",
+			"col-sm-3",
+			".navbar-custom.affix",
+			"navbar",
+			"navbar-",
+			"top",
+			"navbar",
+			"top",
+			"navbar-",
+			"affix",
+			"affix-top",
+			"top",
+			"afix-top",
+			"medici",
+			"asset",
+			"new_anamnese",
+			"this->idespecialidade",
+			"idespecialidade",
+			"name",
+			"searchAnexos",
+			"generateDefaultMessage",
+			"allowed_file_types",
+			"modal",
+			"fade",
+			"portfolio-modal modal fade",
+			"portfolioModalDermatologia",
+			"ArrowRight",
+			"onkeypress",
+			"sexo",
+			"$bd",
+			"bd",
+			"this->",
+			"asset",
+			"esp",
+			"'",
+			"Mandatory",
+			"api_key",
+			"ordem",
+			"programa_instituicao",
+			"p_modificador",
+			"endereco",
+			"pass",
+			"email",
+			">\n",
+			"    ",
+			">\n",
+			"var",
+			"    ",
+			"Rapid Development Framework ",
+			"CakePHP: the rapid development php framework",
+			"title",
+			"root",
+			"usbw",
+			"user"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"\\t"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 46.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "kril.sublime-project",
+	"replace":
+	{
+		"height": 59.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 277.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
