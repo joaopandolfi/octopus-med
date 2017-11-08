@@ -28,7 +28,7 @@ Cardio.add.anamnese = function(req,res){
 	Cardio.test(req,res);
 }
 
-Cardio.add.anamnese = function(req,res){
+Cardio.search.anamnese = function(req,res){
 	console.log("Search Anamnese TEST");
 	Cardio.test(req,res);
 }

@@ -9,7 +9,7 @@ module.exports = function (app) {
 	app.route("/esp/cardio/new/anamnese/").all(cardio.add.anamnese)//post(cardio.new_anamnese);
 
 	//Search
-	app.route("/esp/cardio/search/anamnese/").all(cardio.add.anamnese);
+	app.route("/esp/cardio/search/anamnese/").all(cardio.search.anamnese);
 
 	//Update
 	app.route("/esp/cardio/update/anamnese/").all(cardio.update.anamnese);	
