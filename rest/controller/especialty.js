@@ -8,7 +8,7 @@ var test = function(req,res){
 	res.send({test:"ok"});
 }
 
-var Especiality = {
+var Especialty = {
 	query_format: {
 		error: 0, 
 		message: "Sucess", 
@@ -31,4 +31,4 @@ var Especiality = {
 }
 
 
-module.exports = Especiality;
+module.exports = Especialty;
