@@ -269,28 +269,37 @@
 			}
 		},
 		{
-			"file": "rest/routes/especialties/cardio.js",
+			"file": "rest/routes/defines/specialties.js",
 			"settings":
 			{
-				"buffer_size": 604,
+				"buffer_size": 179,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "rest/controller/especialties/cardio.js",
+			"file": "rest/routes/specialties/cardio.js",
 			"settings":
 			{
-				"buffer_size": 857,
+				"buffer_size": 450,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "rest/controller/especiality.js",
+			"file": "rest/controller/specialty.js",
 			"settings":
 			{
-				"buffer_size": 392,
+				"buffer_size": 390,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "rest/controller/specialties/cardio.js",
+			"settings":
+			{
+				"buffer_size": 856,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -368,13 +377,17 @@
 		"/C/Users/joaop/Projetos/Emescam/octopus-med",
 		"/C/Users/joaop/Projetos/Emescam/octopus-med/rest",
 		"/C/Users/joaop/Projetos/Emescam/octopus-med/rest/constants",
+		"/C/Users/joaop/Projetos/Emescam/octopus-med/rest/controller",
+		"/C/Users/joaop/Projetos/Emescam/octopus-med/rest/controller/specialties",
 		"/C/Users/joaop/Projetos/Emescam/octopus-med/rest/libs",
 		"/C/Users/joaop/Projetos/Emescam/octopus-med/rest/routes",
 		"/C/Users/joaop/Projetos/Emescam/octopus-med/rest/routes/defines",
-		"/C/Users/joaop/Projetos/Emescam/octopus-med/rest/routes/especialties"
+		"/C/Users/joaop/Projetos/Emescam/octopus-med/rest/routes/specialties"
 	],
 	"file_history":
 	[
+		"/C/Users/joaop/Projetos/Emescam/octopus-med/rest/controller/especialties/cardio.js",
+		"/C/Users/joaop/Projetos/Emescam/octopus-med/rest/routes/especialties/cardio.js",
 		"/C/Users/joaop/Projetos/Emescam/octopus-med/README.md",
 		"/C/Users/joaop/Projetos/Emescam/octopus-med/rest/routes/defines/specialties.js",
 		"/C/Users/joaop/Projetos/Emescam/octopus-med/rest/libs/mysql.js",
@@ -383,7 +396,6 @@
 		"/C/Users/joaop/Projetos/Emescam/octopus-med/rest/constants/config.js",
 		"/C/Users/joaop/Projetos/Emescam/octopus-med/rest/libs/regex_patterns.js",
 		"/C/Users/joaop/Projetos/Emescam/PeDiabetico/pediabeticobot/package.json",
-		"/C/Users/joaop/Projetos/Emescam/octopus-med/rest/routes/especialties/cardio.js",
 		"/C/Users/joaop/Projetos/Emescam/octopus-med/package.json",
 		"/C/Users/joaop/Projetos/Emescam/octopus-med/rest/constants/servicesAPI.js",
 		"/C/Users/joaop/Projetos/Emescam/Genectic/emescam_geolocation/README.md",
@@ -501,8 +513,7 @@
 		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/main.php",
 		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/elements/new_anamnese.php",
 		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/elements/search_pacient.php",
-		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/elements/show_consults.php",
-		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/elements/view_consults.php"
+		"/Users/joao/projetos/Emescam/Medicina_Interativa/repo/internal/elements/show_consults.php"
 	],
 	"find":
 	{
@@ -654,7 +665,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -670,8 +681,8 @@
 						"selection":
 						[
 							[
-								464,
-								464
+								109,
+								109
 							]
 						],
 						"settings":
@@ -682,24 +693,109 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "rest/routes/especialties/cardio.js",
+					"file": "rest/routes/defines/specialties.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 604,
+						"buffer_size": 179,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								576,
-								576
+								136,
+								136
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "rest/routes/specialties/cardio.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 450,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								338,
+								338
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "rest/controller/specialty.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 390,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								387,
+								387
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "rest/controller/specialties/cardio.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 856,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								703,
+								703
 							]
 						],
 						"settings":
@@ -715,63 +811,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "rest/controller/especialties/cardio.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 857,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								530,
-								530
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "rest/controller/especiality.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 392,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2,
-								2
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "rest/constants/messages.js",
 					"semi_transient": false,
 					"settings":
@@ -795,7 +835,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -807,7 +847,7 @@
 	},
 	"input":
 	{
-		"height": 46.0
+		"height": 48.0
 	},
 	"layout":
 	{
