@@ -156,5 +156,4 @@ var update  = {
 }
 
 
-module.exports = {createDb: createDb}
-
+module.exports = {createDb: createDb, createCollection: createCollection, insert: insert, search: search, update: update}
