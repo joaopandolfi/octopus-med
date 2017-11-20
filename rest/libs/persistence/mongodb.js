@@ -136,9 +136,18 @@ var search = {
 	}
 }
 
-
+/*
+* Update Objects
+* Base response:
+* res:[{<object_data>, _id:<objectId>}]
+* @param collection <String>
+* @param query {<Object>}
+* @param values {<Object>}
+* @param callback <function(<param>)>
+*/
 var update  = {
 
+	//Update one Value per time
 	one: function(collection,query,values,callback){
 		MongoClient.connect(url, function(err, db) {
 		  if (err) throw err;
@@ -151,7 +160,22 @@ var update  = {
 		    callback(res);
 		  });
 		});
+	},
+
+	//Update multiple Values
+	multiple: function(collection,query,values,callback){
+		MongoClient.connect(url, function(err, db) {
+		  if (err) throw err;
+		  //var newvalues = {$set: {name: "Minnie"} };
+		  db.collection(query).updateMany(query, values, function(err, res) {
+		    if (err) throw err;
+		    console.log(res.result.nModified + " document(s) updated");
+		    db.close();
+		    callback(res);
+		  });
+		});
 	}
+
 
 }
 
