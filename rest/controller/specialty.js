@@ -27,6 +27,16 @@ var Especialty = {
 		anamnese: test
 	},
 
+	//TODO: Implementar
+	check_hash_id: function(user_id, hash){
+
+		return true;
+	},
+
+	error_message: function(code, message){
+		return {success: 0, error:{code:code,message:message}};
+	},
+
 	test: test 
 }
 
