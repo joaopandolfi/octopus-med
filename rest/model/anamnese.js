@@ -4,30 +4,18 @@
 * (C) João Carlos Pandolfi Santana - 12/11/2017
 * joaopandolfi@gmail.com
 */
+var Base = require( './base_consult.js' );
 
-var Anamnese = {
+//Herança
+var Anamnese = Object.create(Base);
 
-	//Cabecalho
-	id_user: "",
-	id_pacient: "",
-	id_anamnese: "",
-	date: "",
-	timestamp: "",
-	ip_user: "",
-	type_user: "",
+Anamnese.data = {
 
 	//Dados medicos
-	hip_diagnostico: "",
-	hist_paciente: "",
-	
-	/*
-	* Texto livre
-	* Usado para input no MV e para montagem legivel dos dados ao medico
-	*/
-	free_text: "",
-
-	//Arquivos
-	files: [{id:"",title:"", type:""}]
+	qp: "",
+	hda: "",
+	hp: "",
+	hf: "",
 }
 
 module.exports = Anamnese;
