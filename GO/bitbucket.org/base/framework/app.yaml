@@ -1,0 +1,10 @@
+runtime: go
+api_version: go1.10.3
+env: flex
+service: testing
+
+manual_scaling:
+  instances: 1
+
+beta_settings:
+  cloud_sql_instances: turbi-dev:us-central1:sqltdev

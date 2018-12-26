@@ -1,0 +1,53 @@
+{
+    /* Estrutura dos hospitais */
+    "hospital":{
+        "_id": "",
+        "name": "",
+        "utis":[
+            {
+                "_id": "",
+                "name": "",
+                "leitos": [
+                    {
+                        "_id": "",
+                        "name": "",
+                        "status": "",
+                        "patientId": "",
+                        "userId": "" // ID do responsavel
+                    }
+                ]
+            }
+        ]
+    },
+
+    "uti":{
+        "_id":"",
+        "name":"",
+        "algumacoisaespecifica": "",
+        "leitos": [
+            {
+                "_id":"",
+                "name": "",
+                "status": "",
+                "patient":{
+                    //<Patient Struct>
+                },
+                "userId": "", // Id do responsavel
+                "lastUpdate": ""
+            }
+        ]
+    },
+
+    "patient": {
+        "_id": "",
+        "name": "",
+        "cod": ""
+    },
+
+    "user":{
+        "_id": "",
+        "username": "",
+        "password": "",
+        "institution":""
+    }
+}
