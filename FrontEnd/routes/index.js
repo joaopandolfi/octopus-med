@@ -33,7 +33,7 @@ router.get('/*', (req, res, next) => {
  * Login Page
  */
 router.get('/', (req, res) => {
-    res.render('login.html')
+    res.render('login.html',{config:config})
 })
 
 router.get('/admin', (req, res) => {
