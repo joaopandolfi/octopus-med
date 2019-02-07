@@ -1,0 +1,19 @@
+<div class="wdw">
+    <div class="wdw-top">
+        <p>Plano de Conduta</p><a onclick="closepopup()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="wdw-content">
+        {% if(interventions) %}
+        {% for intervention in interventions %}
+        <div class="row">
+            <span>{{ intervention.name }}</span> 
+            <a href="/teste/{{ intervention.Id }}"><i class="far fa-comments"></i></a>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="row">
+        <span>Não há intervenções neste leito</span> 
+        </div>
+        {% endif %}
+    </div>
+</div>

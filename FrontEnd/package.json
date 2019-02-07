@@ -1,0 +1,31 @@
+{
+  "name": "medsys-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/esudbrack/medsys-client.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/esudbrack/medsys-client/issues"
+  },
+  "homepage": "https://gitlab.com/esudbrack/medsys-client#README",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "node-fetch": "^2.2.0",
+    "nodemon": "^1.18.4",
+    "nunjucks": "^3.1.3",
+    "rethinkdb": "^2.3.3",
+    "socket.io": "^2.1.1"
+  }
+}

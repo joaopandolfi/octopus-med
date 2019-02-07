@@ -1,0 +1,55 @@
+{% extends './default-page.html' %} 
+
+{% block content %}
+<section id="login">
+    <div>
+        <img src="/public/img/login_logo.png">
+        <form>
+            <p>Entre com suas credenciais</p>
+            <input id="email" type="text" name="email" placeholder="Email: " /> {# type="email" #}
+            <input id="password" type="password" name="password" placeholder="Senha: " />
+            <input type="submit" value="Entrar"/>
+            <a href="#">Esqueceu a senha ?</a>
+        </form>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const login = () => {
+    let username = document.getElementById('email').value
+    let password = document.getElementById('password').value
+    let data = JSON.stringify({ username, password })
+
+    $.ajax({
+        url:`{{ config._server_back }}/login`,
+        method: 'POST',
+        crossDomain: true,
+        xhrFields: {
+            withCredentials: true
+        },
+        dataType: 'json',
+        data,
+        success: (data) => {
+            if(data){
+                $.ajax({
+                    url: `${window.location.origin}/login`,
+                    method: 'POST',
+                    data: {username},
+                    success: (data) => {
+                        window.location = `${window.location.origin}/local`
+                    }
+                })
+            }
+            else alert('Usuário/senha inválido.')
+        }
+    })
+}
+
+$('form').on('submit', (e) => {
+    e.preventDefault()
+    login()
+})
+</script>
+{% endblock %}

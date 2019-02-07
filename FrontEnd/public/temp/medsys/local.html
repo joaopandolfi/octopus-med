@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Medsys</title>
+    <link rel="icon" href="img/favicon.ico">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body>
+    <section id="login">
+        <div>
+            <img src="img/login_logo.png">
+            <form method="POST">
+                <p>Escolha o local de trabalho</p>
+                <select id="hospitais" name="type" value="" onchange="getUTIs()">
+                    <option disabled="" selected="" value="">Selecione um Hospital</option>
+                </select>
+                <select id="utis" name="type" value="">
+                    <option disabled="" selected="" value="">Selecione a UTI</option>
+                    <!-- <option value="1">UTI - Trauma</option>
+                    <option value="2">UTI - Queimados</option>
+                    <option value="3">UTI - Cardiológica</option>
+                    <option value="4">UTI - Respiratória</option> -->
+                </select>
+                <!-- DELETAR QND TIVER LOGIN -->
+                <input type="button" value="Selecionar" onclick="login()" style="width: 100%;background-color: #23af9f;color: #FFFFFF;" />
+                <!-- DEIXAR VISIVEL QND TIVER LOGIN -->
+                <input type="submit" value="Selecionar" style="display:none;" />
+                <a href="#">Entrar com ourta conta</a>
+            </form>
+        </div>
+    </section>
+</body>
+<script>
+    var hospitais = document.getElementById('hospitais')
+    
+    function init(){
+        // ajax GET HOSPITAIS
+        data = [
+            {"Id": "1", "name": "Hospital de teste 1"},
+            {"Id": "2", "name": "Hospital de teste 2" }
+        ]
+        let html = `<option disabled="" selected="" value="">Selecione um Hospital</option>`
+        for (hospital of data){
+           html += `<option value="${hospital.Id}">${hospital.name}</option>`
+        }
+        hospitais.innerHTML = html
+        // end ajax GET HOSPITAIS
+    }
+    init()
+
+    // onchange - Hospitais
+    const getUTIs = () => {
+        let id = hospitais.value
+        let data = {
+            1:[
+                {id: "1", name: 'UTI - Trauma'},
+                {id: "2", name: 'UTI - Queimados'},
+                {id: "3", name: 'UTI - Cardiológica'},
+                {id: "4", name: 'UTI - Respiratória'}
+            ], 
+            2:[
+                { id: "1", name: 'UTI - Trauma' },
+                { id: "3", name: 'UTI - Cardiológica' },
+            ]
+        }
+        // ajax GET UTIS hospital:id
+        let html = '<option disabled="" selected="" value="">Selecione a UTI</option>'
+        for (uti of data[id]) {
+            html += `<option value="${uti.id}">${uti.name}</option>`
+        }
+        document.getElementById('utis').innerHTML = html
+    }
+
+    const login = () => {
+        window.location = 'file:///Users/euler/Projects/medsys/quadro.html'
+        // window.location = `${window.location.origin}/quadro.html`
+    }
+</script>
+</html>

@@ -1,0 +1,80 @@
+{% extends './default-page.html' %} 
+
+{% block content %}
+<section id="login">
+    <div>
+        <img src="/public/img/login_logo.png">
+        <form method="POST">
+            <p>Escolha o local de trabalho</p>
+            <select id="hospitais" value="" onchange="getUTIs()">
+                <option selected value="">Selecione um Hospital</option>
+                {% for hospital in hospitais %}
+                <option value="{{ hospital.Id }}">{{ hospital.name }}</option>
+                {% endfor %}
+            </select>
+            <select id="utis" value="" style="display: none;">
+            </select>
+            <input type="button" value="Selecionar" onclick="login()" style="width: 100%;background-color: #23af9f;color: #FFFFFF;" />
+            <a href="#">Entrar com outra conta</a>
+        </form>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const getUTIs = () => {
+        let id = $('#hospitais').val()
+        if(id){
+            $('#utis').hide()
+            $.ajax({
+                method:'GET',
+                url: `{{ _client_server }}/hospital/${id}/list/uti`,
+                xhrFields: {
+                    withCredentials: true
+                },
+                success: (data) => {
+                    let html = '<option disabled="" selected="" value="">Selecione a UTI</option>'
+                    for (uti of data) {
+                        html += `<option value="${uti.Id}">${uti.name}</option>`
+                    }
+                    $('#utis').html(html)
+                    $('#utis').show()
+                }
+            })
+        }
+    }
+    getUTIs()
+
+    const login = () => {
+        let hospital = $('#hospitais').val()
+        let uti = $('#utis').val()
+        if(!hospital) alert('Favor selecionar um hospital')
+        else if(uti){
+            $.ajax({
+                url: `${window.location.origin}/leitos/${hospital}/${uti}`,
+                method: 'POST',
+                error: (e) => {
+                    alert('Houve um erro ao se comunicar com o servidor.')
+                },
+                success: (data) => {
+                    window.location = '/leitos'
+                }
+            })
+        } 
+        else{
+            $.ajax({
+                url: `${window.location.origin}/leitos/${hospital}`,
+                method: 'POST',
+                error: (e) => {
+                    alert('Houve um erro ao se comunicar com o servidor.')
+                },
+                success: (data) => {
+                    window.location = '/leitos'
+                }
+            })
+        } 
+    }
+
+</script>
+{% endblock %}

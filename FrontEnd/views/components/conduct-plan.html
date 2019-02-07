@@ -1,0 +1,490 @@
+<!-- INICIO DO POPUP -->
+        <section class="wdw-over" id="plano-popup" style="display: none;">
+                <div class="wdw">
+                        <!-- TOPO DO POPUP -->
+                        <div class="wdw-top">
+                            <p>Plano de Conduta</p>
+                            <!--<input type="checkbox" name="close-pop" id="close-pop1">
+                            <label for="s-check1"><i class="fas fa-times"></i></label>
+                            <div id="over" style="background: red; width: 50px; height: 50px;"></div>-->
+                            <a href="#" onclick="popupPlano(false)"><i class="fas fa-times"></i></a>
+                        </div>
+                        <div class="wdw-content">
+        
+                            <!-- CONTEUDO DO POPUP -->
+        
+                            <div id="popup-content" >
+                                
+                                <div id='register'>
+                                    <h3>Cadastrar Paciente no Leito: </h3>
+                                    <div>
+                                        <label>Nome do paciente: </label>
+                                        <div class="rw">
+                                            <input id="ipt-patient-name" list="patient">
+                                            <datalist id="patient">
+                                            </datalist>
+                                            <button id="btn-patient-add" class="add-btn">Adicionar</button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label>Sexo: </label>
+                                        <div class="rw">
+                                            <div class="rw">
+                                                <input type="radio" name="genre" value="masc" id="masc">
+                                                <label for="masc" >Masculino</label>
+                                            </div>
+                                            <div class="rw">
+                                                <input type="radio" name="genre" value="fem" id="fem">
+                                                <label for="fem">Feminino</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label>Data de nascimento: </label>
+                                        <input id="ipt-patient-dtnasc" type="date">
+                                    </div>
+                                    <div>
+                                        <label>Nº de atendimento: </label>
+                                        <input type="text">
+                                    </div>
+                                    <div class="row">
+                                        <a class="btback alg-r" href="#diagnostics" onclick="getDiagnose()">Próximo <i class="far fa-arrow-alt-circle-right"></i></a>
+                                    </div>
+                                </div>
+                                <div id='diagnostics'>
+                                    <h3>Diagnósticos: </h3>
+                                    <div>
+                                        <label>Insira o Diagnóstico: </label>
+                                        <div class="rw">
+                                            <input id="ipt-dianostics" list="dtl-diagnostics">
+                                            <datalist id="dtl-diagnostics">
+                                            </datalist>
+                                            <button class="add-btn" onclick="saveDiagnose()">Adicionar</button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <table id="tb-diagnose">   
+                                            <thead>
+                                                <tr>
+                                                    <th>Diagnóstico: </th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div class="row">
+                                        <a class="btback alg-l" href="#register"><i class="far fa-arrow-alt-circle-left"></i> Voltar</i></a>
+                                        <a class="btback alg-r" href="#devices" onclick="getDispositive()">Próximo <i class="far fa-arrow-alt-circle-right"></i></a>
+                                    </div>
+                                </div>
+
+                                <div id='add-device'>
+                                    <h3>Cadastrar Dispositivo </h3>
+                                    <div>
+                                        <label>Nome do dispositivo: </label>
+                                        <div class="rw">
+                                            <input id="ipt-disp-name" list="dtl-device-name" name="device">
+                                            <datalist id="dtl-device-name">
+                                                
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label>Local da Inserção: </label>
+                                        <div class="rw">
+                                            <input id="ipt-disp-local" list="dtl-device-local" name="device-sel">
+                                            <datalist id="dtl-device-local">
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label>Data de nascimento: </label>
+                                        <input id="ipt-disp-date" type="date">
+                                    </div>
+                                    <div class="row">
+                                        <a class="btback alg-l" href="#devices"><i class="far fa-arrow-alt-circle-left"></i> Voltar</i></a>
+                                        <a class="btback alg-r" href="#devices" onclick="saveDisp()">Adicionar <i class="far fa-arrow-alt-circle-right"></i></a>
+                                    </div>
+                                </div>
+                                
+                                <div id='devices'>
+                                    <div class="rw btwn">
+                                        <h3>Dispositivos:</h3>
+                                        <a href="#add-device" onclick="getDtList('dtl-device-name','device-name');getDtList('dtl-device-local','device-local')"><button class="add-btn">Adicionar</button> </a>
+                                    </div>
+                                    <div>
+                                        <div class="rw">
+                                            <ul id="tb-dispositive">
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <a class="btback alg-l" href="#diagnostics"><i class="far fa-arrow-alt-circle-left"></i> Voltar</i></a>
+                                        <a class="btback alg-r" href="#culture" onclick="getCulture()">Próximo <i class="far fa-arrow-alt-circle-right"></i></a>
+                                    </div>
+                                </div>
+                                
+                                <div id='add-culture'>
+                                    <h3>Cadastrar Cultura </h3>
+                                    <div>
+                                        <label>Nome da Cultura: </label>
+                                        <div class="rw">
+                                            <input id="ipt-cult-name" list="dtl-cult-name" name="culture-sel">
+                                            <datalist id="dtl-cult-name">
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label>Data da Cultura: </label>
+                                        <input id="ipt-cult-date" type="date">
+                                    </div>
+                                    <div>
+                                        <label>Meio de Cultura: </label>
+                                        <div class="rw">
+                                            <input id="ipt-cult-meio" list="dtl-cult-meio" name="culturem-sel">
+                                            <datalist id="dtl-cult-meio">
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label>Germe Isolado: </label>
+                                        <div class="rw">
+                                            <input id="ipt-cult-germe" list="dtl-cult-germe" name="germ-sel">
+                                            <datalist id="dtl-cult-germe">
+    
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <a class="btback alg-l" href="#culture"><i class="far fa-arrow-alt-circle-left"></i> Voltar</i></a>
+                                        <a class="btback alg-r" href="#culture" onclick="saveCulture()">Salvar <i class="far fa-arrow-alt-circle-right"></i></a>
+                                    </div>
+                                </div>
+
+                                <div id='culture'>
+                                    <div class="rw btwn">
+                                        <h3>Culturas: </h3>
+                                        <a href="#add-culture" onclick="getDtList('dtl-cult-name','cult-name'); getDtList('dtl-cult-meio','cult-meio'); getDtList('dtl-cult-germe', 'cult-germe');"><button class="add-btn">Adicionar</button></a>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="c-check1" name="c-check" hidden checked='true'>
+                                        <label for="c-check1">Culturas Pedentes: </label>
+                                        <div class="content-check">
+                                            <ul id="tb-culture">
+                                              
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="c-check2" name="c-check" hidden>
+                                        <label for="c-check2">Culturas Identificada: </label>
+                                        <div class="content-check">
+                                            <ul>
+                                            
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <a class="btback alg-l" href="#devices"><i class="far fa-arrow-alt-circle-left"></i> Voltar</i></a>
+                                        <a class="btback alg-r" href="#antimicrobials" onclick="getAntimicrobials()">Próximo <i class="far fa-arrow-alt-circle-right"></i></a>
+                                    </div> 
+                                </div>
+
+                                <div id='edit-culture'>
+                                    <h3>Editar Cultura: </h3>
+                                    <div>
+                                        <textarea placeholder="Informe o resultado da cultura" rows="8"></textarea>
+                                    </div>
+                                    <div class="row">
+                                        <a class="btback alg-l" href="#culture"><i class="far fa-arrow-alt-circle-left"></i> Voltar</i></a>
+                                        <a class="btback alg-r" href="#add-antimicrobials">Próximo <i class="far fa-arrow-alt-circle-right"></i></a>
+                                    </div> 
+                                </div>
+
+                                <div id='add-antimicrobials'>
+                                    <h3>Cadastrar Antimicrobiano</h3>
+                                    <div>
+                                        <label>Nome do Antimicrobiano: </label>
+                                        <div class="rw">
+                                            <input id="ipt-micr-name" list="dtl-micr-name" name="device">
+                                            <datalist id="dtl-micr-name">
+                                                
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label>Data de início:</label>
+                                        <input id="ipt-micr-date" type="date">
+                                    </div>
+                                    <div>
+                                        <label>Quantidade de dias:</label>
+                                        <input id="ipt-micr-days" type="text" name="days">
+                                    </div>
+                                    <div class="row">
+                                        <a class="btback alg-l" href="#edit-culture"><i class="far fa-arrow-alt-circle-left"></i> Voltar</i></a>
+                                        <a class="btback alg-r" href="#antimicrobials" onclick="saveAntimicrobials()">Próximo <i class="far fa-arrow-alt-circle-right"></i></a>
+                                    </div>
+                                </div>
+                                
+                                <div id='antimicrobials'>
+                                    <div class="rw btwn">
+                                        <h3>Antimicrobianos: </h3>
+                                        <a href="#add-antimicrobials" onclick="getDtList('dtl-micr-name','micr-name')"><button class="add-btn">Adicionar</button></a>
+                                    </div>
+                                    <div>
+                                        <div class="rw">
+                                            <ul id="tb-microbials">
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <a class="btback alg-l" href="#culture"><i class="far fa-arrow-alt-circle-left"></i> Voltar</i></a>
+                                        <a class="btback alg-r" href="#security-pck">Próximo <i class="far fa-arrow-alt-circle-right"></i></a>
+                                    </div> 
+                                </div>
+
+                                <div id='security-pck'>
+                                    <div class="rw btwn">
+                                        <h3>Pacotes de Segurança: </h3>
+                                        <button class="add-btn">Adicionar</button>
+                                    </div>
+                                    <div>
+                                        <div class="rw">
+                                            <ul>
+                                                <li>
+                                                    <input type="checkbox" name="c-check" id="s-check1">
+                                                    <div class="rw btwn act">
+                                                        <input type="checkbox">
+                                                        <h5>Pacote de Segurança 1</h5>
+                                                        <div class="rw act">
+                                                            <label for="s-check1"><i class="fas fa-chevron-down"></i></label >
+                                                            <button><i class="fas fa-edit"></i></button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-check">
+                                                        <p>
+                                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="c-check" id="s-check2">
+                                                    <div class="rw btwn act">
+                                                        <input type="checkbox">
+                                                        <h5>Pacote de Segurança 2</h5>
+                                                        <div class="rw act">
+                                                            <label for="s-check2"><i class="fas fa-chevron-down"></i></label >
+                                                            <button><i class="fas fa-edit"></i></button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-check">
+                                                        <p>
+                                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="c-check" id="s-check3">
+                                                    <div class="rw btwn act">
+                                                        <input type="checkbox">
+                                                        <h5>Pacote de Segurança 3</h5>
+                                                        <div class="rw act">
+                                                            <label for="s-check3"><i class="fas fa-chevron-down"></i></label >
+                                                            <button><i class="fas fa-edit"></i></button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-check">
+                                                        <p>
+                                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" name="c-check" id="s-check4">
+                                                    <div class="rw btwn act">
+                                                        <input type="checkbox">
+                                                        <h5>Pacote de Segurança 4</h5>
+                                                        <div class="rw act">
+                                                            <label for="s-check4"><i class="fas fa-chevron-down"></i></label >
+                                                            <button><i class="fas fa-edit"></i></button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-check">
+                                                        <p>
+                                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <a class="btback alg-l" href="#antimicrobials"><i class="far fa-arrow-alt-circle-left"></i> Voltar</i></a>
+                                        <a class="btback alg-r" href="#just-security-pck">Próximo <i class="far fa-arrow-alt-circle-right"></i></a>
+                                    </div> 
+                                </div>
+
+                                <div id='just-security-pck'>
+                                    <h3>Justificar Pacote de Segurança: </h3>
+                                    <div>
+                                        <textarea placeholder="Justifique o pacote de segurança" rows="8"></textarea>
+                                    </div>
+                                    <div class="row">
+                                        <a class="btback alg-l" href="#security-pck"><i class="far fa-arrow-alt-circle-left"></i> Voltar</i></a>
+                                        <a class="btback alg-r" href="#l-routine" onclick="getPendents()">Próximo <i class="far fa-arrow-alt-circle-right"></i></a>
+                                    </div> 
+                                </div>
+
+                                <div id='l-routine'>
+                                    <div class="rw btwn">
+                                        <h3>Condutas da Ultima Rotina:</h3>
+                                        <button class="add-btn">Adicionar</button>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="r-check1" name="c-check" hidden  checked='true'>
+                                        <label for="r-check1">Condutas pendentes: </label>
+                                        <div class="content-check">
+                                            <ul id="tb-routine-open">
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="r-check2" name="c-check" hidden checked='true'>
+                                        <label for="r-check2">Condutas concluídas: </label>
+                                        <div class="content-check">
+                                            <ul id="tb-routine-finished">
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <a class="btback alg-l" href="#just-security-pck"><i class="far fa-arrow-alt-circle-left"></i> Voltar</i></a>
+                                        <a class="btback alg-r" href="#today" onclick="getToday()">Próximo <i class="far fa-arrow-alt-circle-right"></i></a>
+                                    </div> 
+                                </div>
+
+                                <div id='add-today'>
+                                    <h3>Cadastrar Plano de Hoje</h3>
+                                    <div>
+                                        <label>Informe a Conduta: </label>
+                                        <div class="rw">
+                                            <input id="ipt-conduct-name" list="dtl-conduct-plan-name" name="conduct-sel">
+                                            <datalist id="dtl-conduct-plan-name">
+                                                
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                    <div class="rw">
+                                        <div>
+                                            <label>Conduta Contínua?</label>
+                                            <input id="ckb-conduct-continue" type="checkbox">
+                                        </div>
+                                        <div>
+                                            <label>Intervalo:</label>
+                                            <input id="ipt-conduct-interval" list="interval-sel" name="interval-sel">
+                                            <datalist id="interval-sel">
+                                                <option value="1h">
+                                                <option value="6h">
+                                                <option value="12h">
+                                                <option value="18h">
+                                                <option value="24h">
+                                            </datalist>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label>Profissionais Envolvidos</label>
+                                        <div class="rw btwn">
+                                            <div>
+                                                <input id="ckb-conduct-enf" type="checkbox"> Enfermeiro
+                                            </div>
+                                            <div>
+                                                <input id="ckb-conduct-fisio" type="checkbox"> Fisioterapeura
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label>Médico Especialista:</label>
+                                        <input id="ipt-conduct-doctor" list="dtl-doctors-name" name="specialist-sel">
+                                        <datalist id="dtl-doctors-name">
+                                            <option value="Usuário Registrado no Banco 1">
+                                            <option value="Usuário Registrado no Banco 2">
+                                        </datalist>
+                                    </div>
+                                    <div class="row">
+                                        <a class="btback alg-l" href="#l-routine"><i class="far fa-arrow-alt-circle-left"></i> Voltar</i></a>
+                                        <a class="btback alg-r" href="#today" onclick="saveConduct(); getToday();">Próximo <i class="far fa-arrow-alt-circle-right"></i></a>
+                                    </div>
+                                </div>
+
+                                <div id='today'>
+                                    <div class="rw btwn">
+                                        <h3>Plano de Hoje: </h3>
+                                        <a href="#add-today" onclick="getConducts('dtl-conduct-plan-name');getDoctors('dtl-doctors-name')"> <button class="add-btn">Adicionar</button></a>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="t-check1" name="c-check" hidden>
+                                        <label for="t-check1">Condutas conclídas: </label>
+                                        <div class="content-check">
+                                            <ul id="tb-today-finished">
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input type="checkbox" id="t-check2" name="c-check" hidden>
+                                        <label for="t-check2">Condutas pendentes: </label>
+                                        <div class="content-check">
+                                            <ul id="tb-today-open">
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <a class="btback alg-l" href="#add-today"><i class="far fa-arrow-alt-circle-left"></i> Voltar</i></a>
+                                        <a class="btback alg-r" href="#rout-exa" onclick="getDtList('dtl-exam-name','exam-name'); getExam()">Próximo <i class="far fa-arrow-alt-circle-right"></i></a>
+                                    </div> 
+                                </div>
+
+                                <div id='rout-exa'>
+                                    <h3>Exames de Rotina:</h3>
+                                    <div>
+                                        <label>Adicionar exames:</label>
+                                        <div class="rw">
+                                            <input id="ipt-exam-name" list="dtl-exam-name">
+                                            <datalist id="dtl-exam-name">
+                                            </datalist>
+                                            <button class="add-btn" onclick="saveExam()">Adicionar</button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <ul id="tb-exam">
+                                        </ul>
+                                    </div>
+                                    <div class="row">
+                                        <a class="btback alg-l" href="#today"><i class="far fa-arrow-alt-circle-left"></i> Voltar</i></a>
+                                        <a class="btback alg-r" href="#c-impression">Próximo <i class="far fa-arrow-alt-circle-right"></i></a>
+                                    </div> 
+                                </div>
+
+                                <div id='c-impression'>
+                                    <h3>Impressão Clínica: </h3>
+                                    <div>
+                                        <textarea id="ipt-impression" placeholder="Impressão clinica do paciente o leito" rows="8"></textarea>
+                                    </div>
+                                    <div class="row">
+                                        <a class="btback alg-l" href="#rout-exa"><i class="far fa-arrow-alt-circle-left"></i> Voltar</i></a>
+                                        <a class="btback alg-r" href="#" onclick="saveImpression();popupPlano(false)">Salvar <i class="far fa-arrow-alt-circle-right"></i></a>
+                                    </div> 
+                                </div>
+                            </div> 
+                            
+        
+                            <!-- FIM DO CONTEUDO DO POPUP -->
+        
+                            <!-- BASE DO POPUP -->
+                        </div>
+                    </div>
+                </section>
+        <!-- FIM DO POPUP -->

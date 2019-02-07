@@ -1,0 +1,176 @@
+<section id="content">
+    <div class="header-title">
+        <h1 class="bludrk">CONFIGURAÇÔES</h1>
+        <h2 class="gre">Configurações gerais do sistema.</h2>
+    </div>
+    <div class="gen-frame">
+        <nav class="gen-frame-menu">
+            <ul>
+                <li><p>Cadastros</p></li>
+                <li><a href="#config-diag">Diagnósticos</a></li>
+                <li><a href="#config-disp">Dispositivos</a></li>
+                <li><a href="#config-cult">Culturas</a></li>
+                <li><a href="#config-anti">Antimicrobianos</a></li>
+                <li><a href="#config-paco">Pacotes de Segurança</a></li>
+                <li><a href="#config-exam">Exames</a></li>
+            </ul>
+        </nav>
+
+        <div id='config-diag' class="fx cl">
+            <div class="gen-frame-top">Cadastrar Diagnósticos</div>
+            <div class="gen-frame-content cl">
+                <div class="rw mgb20">
+                    <div>
+                        <label>Código</label>
+                        <input id="ipt-diag-cod" type="text">
+                    </div>
+                    <div>
+                        <label>Diagnóstico</label>
+                        <input id="ipt-diag-name" type="text">
+                    </div>
+                    <a class="bt mgt24" href="#config-diag" onclick="newDiagnose()">Adicionar <i class="fas fa-plus"></i></a>
+                </div>
+                <table id="tb-diagnose">
+                    <tr>
+                        <th class="col-1">Código</th>
+                        <th>Diagnóstico</th>
+                        <th width="45px">Editar</th>
+                    </tr>
+                    
+                </table>
+            </div>
+        </div>
+        <div id='config-disp' class="fx cl">
+            <div class="gen-frame-top">Cadastrar Dispositivos</div>
+            <div class="rw">
+                <div class="gen-frame-content cl">
+                    <div class="rw mgb20">
+                        <div>
+                            <label>Dispositivo</label>
+                            <input id="ipt-disp-name" type="text">
+                        </div>
+                        <a class="bt mgt24" href="#" onclick="newDisp()">Adicionar <i class="fas fa-plus"></i></a>
+                    </div>
+                    <table id="tb-disp-name">
+                        <tr>
+                            <th>Dispositivos</th>
+                            <th width="45px">Editar</th>
+                        </tr>
+                        
+                    </table>
+                </div>
+
+                <div class="gen-frame-content cl">
+                    <div class="rw mgb20">
+                        <div>
+                            <label>Local de Inserção</label>
+                            <input id="ipt-disp-local" type="text">
+                        </div>
+                        <a class="bt mgt24" href="#config-disp" onclick="newGen('ipt-disp-local','tb-disp-local','disp_local', 'device-local')">Adicionar <i class="fas fa-plus"></i></a>
+                    </div>
+                    <table>
+                        <tr id="tb-disp-local">
+                            <th>Locais de Inserção</th>
+                            <th width="45px">Editar</th>
+                        </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id='config-cult' class="fx cl">
+            <div class="gen-frame-top">Cadastrar Culturas</div>
+            <div class="rw">
+                <div class="gen-frame-content cl">
+                    <div class="rw mgb20">
+                        <div>
+                            <label>Meio de Cultura</label>
+                            <input id="ipt-cult-meio" type="text">
+                        </div>
+                        <a class="bt mgt24" href="#" onclick="newGen('ipt-cult-meio','tb-cult-meio','cult_meio', 'cult-meio')">Adicionar <i class="fas fa-plus"></i></a>
+                    </div>
+                    <table id="tb-cult-meio">
+                        <tr>
+                            <th>Meios de Cultura</th>
+                            <th width="45px">Editar</th>
+                        </tr>
+                        
+                    </table>
+                </div>
+                <div class="gen-frame-content cl">
+                    <div class="rw mgb20">
+                        <div>
+                            <label>Germe Isolado</label>
+                            <input id="ipt-cult-germe" type="text">
+                        </div>
+                        <a class="bt mgt24" href="#config-cult" onclick="newGen('ipt-cult-germe','tb-cult-germe','cult_germe', 'cult-germe')">Adicionar <i class="fas fa-plus"></i></a>
+                    </div>
+                    <table id="tb-cult-germe">
+                        <tr>
+                            <th>Germes Isolados</th>
+                            <th width="45px">Editar</th>
+                        </tr>
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id='config-anti' class="fx cl">
+            <div class="gen-frame-top">Cadastrar Antimicrobianos</div>
+                <div class="gen-frame-content cl">
+                    <div class="rw mgb20">
+                        <div>
+                            <label>Antimicrobiano</label>
+                            <input id="ipt-micr-name" type="text">
+                        </div>
+                        <a class="bt mgt24" href="#config-anti" onclick="newGen('ipt-micr-name','tb-micr-name','micr_name', 'micr-name')">Adicionar <i class="fas fa-plus"></i></a>
+                    </div>
+                    <table id="tb-micr-name">
+                        <tr>
+                            <th>Antimicrobianos</th>
+                            <th width="45px">Editar</th>
+                        </tr>
+                        
+                    </table>
+                </div>
+        </div>
+        <div id='config-paco' class="fx cl">
+            <div class="gen-frame-top">Cadastrar Pacotes de Segurança</div>
+                <div class="gen-frame-content cl">
+                    <div class="rw mgb20">
+                        <div>
+                            <label>Pacote de Segurança</label>
+                            <input id="ipt-pkg-safe-name" type="text">
+                        </div>
+                        <a class="bt mgt24" href="#config-paco" onclick="newGen('ipt-pkg-safe-name','tb-pkg-safe-name','pkg_safe_name', 'pkg-safe-name')">Adicionar <i class="fas fa-plus"></i></a>
+                    </div>
+                    <table id="tb-pkg-safe-name">
+                        <tr>
+                            <th>Pacotes de Segurança</th>
+                            <th width="45px">Editar</th>
+                        </tr>
+                        
+                    </table>
+                </div>
+        </div>
+        <div id='config-exam' class="fx cl">
+            <div class="gen-frame-top">Cadastrar Exames</div>
+                <div class="gen-frame-content cl">
+                    <div class="rw mgb20">
+                        <div>
+                            <label>Exame</label>
+                            <input id="ipt-exam-name" type="text">
+                        </div>
+                        <a class="bt mgt24" href="#config-exam" onclick="newGen('ipt-exam-name','tb-exam-name','exam_name', 'exam-name')">Adicionar <i class="fas fa-plus"></i></a>
+                    </div>
+                    <table id="tb-exam-name">
+                        <tr>
+                            <th>Exames</th>
+                            <th width="45px">Editar</th>
+                        </tr>
+                      
+                    </table>
+                </div>
+        </div>
+    </div>
+</section>

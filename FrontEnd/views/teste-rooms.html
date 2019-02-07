@@ -1,0 +1,121 @@
+{% extends './default-page.html' %} 
+
+{% block content %}
+    
+{% include "./components/header.html" %}
+<main>
+    {% include "./components/aside.html" %}
+    <section id="content">
+        <div class="header-title">
+            <h1 class="bludrk">Notificações</h1>
+        </div>
+
+        <div class="content-box shadow2">
+            <div class="rw">
+                <table id="datatable-notification">
+                    <thead>
+                        <tr>
+                            <th>Horário</th>
+                            <th>Intervenção</th>
+                            <th>Notificação</th>
+                            <th style="width: 90px">Chat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="header-title">
+            <h1 class="bludrk">Intervenções</h1>
+            {# <h2 class="gre">Registro de Hospitais.</h2> #}
+        </div>
+        <div class="content-box shadow2">
+            {# <div class="rwr">
+                <a onclick="popupHospital(true)"><i class="fas fa-plus"></i>Adicionar hospital</a>
+            </div> #}
+            <div class="rw">
+                <table id="datatable">
+                    <thead>
+                        <tr>
+                            <th>Intervenção</th>
+                            <th style="width: 90px">Chat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
+{% block scripts %}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="/public/js/tableLanguage.js"></script>
+
+<script>
+    var username = {{ username | dump | safe }}
+    var data = {{ data | dump | safe }}
+    var notifications = []
+    var socket = io.connect()
+
+    var disconnected = () => {
+        alert('Sua sessão foi expirada, favor efetuar o login novamente')
+        window.location = "/"
+    }
+
+    if(username) socket.emit('iamhere', {username})
+    else{
+        disconnected()
+    }
+
+    socket.on('notification', (notification) => {
+        if(notification.interventionId)
+            notification.intervention = data.find(x => x.Id=="5bb3c1024cf8a6be65b2602e").name
+        else notification.intervention = ''
+        notifications = [notification].concat(notifications)
+
+        tableNotification.clear()
+        tableNotification.rows.add(notifications)
+        tableNotification.draw()
+    })
+
+    let tableNotification = $('#datatable-notification').DataTable({
+        data: [],
+        columns: [
+            { 'data': 'timestamp', orderable: false},
+            { 'data': 'intervention', orderable: false},
+            { 'data': 'message', orderable: false},
+            {
+                'data': 'interventionId', 'render': function (data, type, row, meta) {
+                    return (data) ? `<a href="/teste/${data}"><i class="far fa-comments"></i></a>` : ''
+                }, orderable: false
+            }
+        ],
+        language: tableLanguage,
+        order: [],
+        dom: '<"top"ilf>t<"bottom"p>'
+    })
+
+    let table = $('#datatable').DataTable({
+        data,
+        columns: [
+            { 'data': 'name'},
+            {
+                'data': 'Id', 'render': function (data, type, row, meta) {
+                    return `<a href="/teste/${data}"><i class="far fa-comments"></i></a>`
+                }, orderable: false
+            }
+        ],
+        language: tableLanguage,
+        dom: '<"top"ilf>t<"bottom"p>'
+    })
+
+    $('.dataTables_info').addClass('col-4')
+    $('.dataTables_length').addClass('col-2')
+    $('.dataTables_filter').addClass('col-5')
+</script>
+{% endblock %}

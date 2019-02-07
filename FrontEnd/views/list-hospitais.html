@@ -1,0 +1,270 @@
+{% extends './default-page.html' %} 
+
+{% block content %}
+    
+{% include "./components/header.html" %}
+<main>
+    {% include "./components/aside.html" %}
+    <section id="content" >
+        <div class="header-title">
+            <h1 class="bludrk">HOSPITAIS</h1>
+            <h2 class="gre">Registro de Hospitais.</h2>
+        </div>
+        <div class="content-box shadow2">
+            <div class="rwr">
+                <a onclick="popupHospital(true)"><i class="fas fa-plus"></i>Adicionar Hospital</a> 
+            </div>
+            <div class="rw">
+                <table id="datatable">
+                    <thead>
+                        <tr>
+                            <th style="width: 60px">ID</th>
+                            <th>Hospital</th>
+                            <!-- {# <th style="width: 130px">Telefone</th>
+                            <th>Endereço</th> #} -->
+                            <th style="width: 90px">Edição</th>
+                            <th style="width: 90px">Excluir</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</main>
+{% include "./components/new-hospital.html" %}
+{% endblock %}
+{% block scripts %}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+<script>
+let hospitais =  {{ hospitais | dump | safe }};
+var idHospital = '';
+
+const popupHospital = (display) => {
+  idHospital = ''
+  if(display) $('#hospital-popup').show()
+  else $('#hospital-popup').hide() 
+}
+
+    let table = $('#datatable').DataTable({
+        data: {{ hospitais | dump | safe }},
+        //EX: {"id":"","Id":"5ba3b2e74cf8a6be651b650e","name":"Hosp test POST","modules":["basic"]}
+        columns: [
+            { 'data': 'Id' },
+            { 'data': 'name'},
+            // {# { 'data': 'telefone' },
+            // { 'data': 'endereco' }, #}
+            
+            {
+              'data': 'Id', 'render': function (data, type, row, meta) {
+                    return `<a onclick="updateHospital('${data}')"><i class="fas fa-edit"></i></a>`
+                }, orderable: false
+            },
+            // {
+            //     'data': 'Id', 'render': function (data, type, row, meta) {
+            //         return `<a href="/hospital/${data}/list/uti"><i class="fas fa-edit"></i></a>`
+            //     }, orderable: false
+            // },
+            {
+                'data': 'Id', 'render': function (data, type, row, meta) {
+                    return `<a onclick="delHospital('${data}')" href=""><i class="fa fa-trash"></i></a>`
+                }, orderable: false
+            }
+        ],
+        language: {
+            "sEmptyTable": "Nenhum registro encontrado",
+            "sInfo": "_TOTAL_ Resultado(s)",
+            "sInfoEmpty": "0 Resultado",
+            "sInfoFiltered": "de _MAX_ Registro(s)",
+            "sInfoPostFix": "",
+            "sInfoThousands": ".",
+            "sLengthMenu": "Resultados por página _MENU_",
+            "sLoadingRecords": "Carregando...",
+            "sProcessing": "Processando...",
+            "sZeroRecords": "Nenhum registro encontrado",
+            "sSearch": "Pesquisar",
+            "oPaginate": {
+                "sNext": "Próximo",
+                "sPrevious": "Anterior",
+                "sFirst": "Primeiro",
+                "sLast": "Último"
+            },
+            "oAria": {
+                "sSortAscending": ": Ordenar colunas de forma ascendente",
+                "sSortDescending": ": Ordenar colunas de forma descendente"
+            }
+        },
+        dom: '<"top"ilf>t<"bottom"p>'
+    })
+
+    const updateHospital = (id) => {
+      popupHospital(true)
+      idHospital = id
+      let hosp = hospitais.find((hosp) => {
+        if (hosp.Id == id) return true
+      });
+      $('#name').val(hosp.name)
+      $('#tel').val(hosp.tel)
+      $('#country').val(hosp.country)
+      $('#city').val(hosp.city)
+      $('#district').val(hosp.district)
+      $('#logradouro').val(hosp.logradouro)
+      $('#number').val(hosp.number)
+      $('#cep').val(hosp.cep)
+      $('#cnpj').val(hosp.cnpj)
+      $('#others').val(hosp.others)
+    }
+
+    const saveHospital = () => {
+      let data = JSON.stringify({
+        name: $('#name').val(),
+        tel: $('#tel').val(),
+        country: $('#country').val(),
+        city: $('#city').val(),
+        district: $('#district').val(),
+        logradouro: $('#logradouro').val(),
+        number: $('#number').val(),
+        cep: $('#cep').val(),
+        cnpj: $('#cnpj').val(),
+        others: $('#others').val()
+      })
+
+      if(idHospital) {
+        $.ajax({
+          method: 'POST',
+          url: `http://localhost:9092/hospital/${idHospital}/update`,
+          async: true,
+          cache: false,
+          xhrFields: {
+            withCredentials: true
+          },
+          dataType: 'json',
+          data,
+          success: (data) => {
+            name.val(''),
+            tel.val(''),
+            country.val(''),
+            city.val(''),
+            district.val(''),
+            logradouro.val(''),
+            number.val(''),
+            cep.val(''),
+            cnpj.val(''),
+            others.val(''),
+            location.reload()
+            setTimeout(()=> {
+              $('#bt-close-popup').click();
+              alert(`Hospital '${hosp.name}' foi atualizado!`);
+            }, 1000);
+          },
+          error: (jqXHR, textStatus, errorThrown) => {
+            setTimeout(()=> {
+              console.error(jqXHR, textStatus, errorThrown);
+              alert(`Não foi possível atualizar o Hospital '${hosp.name}'`);
+            }, 1000);
+          },
+          complete: (data) => {
+            setTimeout(() => {
+            $('#bt-close-popup').click();
+              alert(`Registro efetuado!`);
+              // table.ajax.reload(data);
+              location.reload(true);
+            }, 2000);
+          },
+        })
+      }
+      else {
+        $.ajax({
+          method: 'POST',
+          url: `http://localhost:9092/hospital`,
+          async: true,
+          cache: false,
+          xhrFields: {
+            withCredentials: true
+          },
+          datatableType: 'json',
+          data,
+          success: (data) => {
+            name.val(''),
+            tel.val(''),
+            country.val(''),
+            city.val(''),
+            district.val(''),
+            logradouro.val(''),
+            number.val(''),
+            cep.val(''),
+            cnpj.val(''),
+            others.val(''),
+            location.reload(),
+            setTimeout(()=> {
+              $('#bt-close-popup').click();
+              alert(`Hospital '${hosp.name}' salvo com sucesso!`);
+            }, 2000);
+          },
+          error: (jqXHR, textStatus, errorThrown) => {
+            setTimeout(()=> {
+              $('#bt-close-popup').click();
+              console.error(jqXHR, textStatus, errorThrown);
+              alert(`Não foi possível salvar o Hospital '${hosp.name}'`);
+            }, 1000);
+          },
+          complete: () => {
+            setTimeout(()=> {
+              alert(`Registro efetuado!`);
+              $('#bt-close-popup').click();
+              location.reload(true);
+            }, 3000);
+          },
+        })
+
+      }
+    }
+
+    const delHospital = (data) => {
+      let hosp = hospitais.find((hosp) => {
+        if (hosp.Id == data) return true
+      });
+
+      if(data) {
+        $.ajax({
+          method: 'POST',
+          url: `http://localhost:9092/hospital/${data}/del`,
+          async: true,
+          cache: false,
+          xhrFields: {
+            withCredentials: true
+          },
+          dataType: 'json',
+          data,
+          beforeSend: () => {
+            setTimeout(()=> {
+              confirm(`Tem certeza que deseja excluir '${hosp.name}'`);
+            }, 1000);
+          },
+          success: (data) => {
+            setTimeout(()=> {
+              alert(`O Hospital '${hosp.name}' foi deletado!`);
+            }, 3000);
+          },
+          error: (jqXHR, textStatus, errorThrown) => {
+            console.error(jqXHR, textStatus, errorThrown);
+            alert(`Não foi possível excluir o Hospital '${hosp.name}'`);
+          },
+          complete: () => {
+            setTimeout(()=> {
+              alert(`Registro efetuado!`);
+              location.reload(true);
+            }, 3000);
+          },
+        })
+      }
+    }
+
+    $('.dataTables_info').addClass('col-4')
+    $('.dataTables_length').addClass('col-2')
+    $('.dataTables_filter').addClass('col-5')
+</script>
+{% endblock %}

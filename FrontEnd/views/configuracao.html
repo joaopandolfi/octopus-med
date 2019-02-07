@@ -1,0 +1,95 @@
+{% extends './default-page.html' %} 
+
+{% block content %}
+
+    {% include "./components/header.html" %}
+    <main>
+        {% include "./components/aside.html" %}
+        {% include "./components/config.html" %}
+    </main>
+    
+
+{% endblock %}
+    
+{% block scripts %}
+<script >
+    const getConductList = (type,callback) =>{
+            $.ajax({
+                url:`{{ _server }}/conducts/${type}`,
+                method: 'GET',
+                crossDomain: true,
+                xhrFields: {
+                    withCredentials: true
+                },
+                success: (data) => {
+                    callback(data)
+                }
+            })
+        }
+
+    const delConduct = (idConduct, callback) =>{
+        let data= JSON.stringify({})
+        $.ajax({
+            url:`{{ _server }}/conducts/${idConduct}`,
+            method: 'POST',
+            crossDomain: true,
+            xhrFields: {
+                withCredentials: true
+            },
+            dataType: 'json',
+            data,
+            success: (data) => {
+                callback(data)
+            }
+        })
+    }
+
+    const newConduct = (name,cod,type,callback) =>{
+        let data= JSON.stringify({
+            name:name,
+            code:cod,
+            type:type
+        })
+        
+        $.ajax({
+            url:`{{ _server }}/conducts`,
+            method: 'POST',
+            crossDomain: true,
+            xhrFields: {
+                withCredentials: true
+            },
+            dataType: 'json',
+            data,
+            success: (data) => {
+                callback(data)
+            }
+        })
+    }
+
+    const editConduct = (idConduct, name,cod,type,call)=>{
+        let data= JSON.stringify({
+            name:name,
+            code:cod,
+            type:type
+        })
+        
+        $.ajax({
+            url:`{{ _server }}/conducts/${idConduct}`,
+            method: 'POST',
+            crossDomain: true,
+            xhrFields: {
+                withCredentials: true
+            },
+            dataType: 'json',
+            data,
+            success: (data) => {
+                callback(data)
+            }
+        })
+    }
+
+</script>
+
+<script src="/public/js/config.js"></script>
+
+{% endblock %} 

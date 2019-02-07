@@ -1,0 +1,114 @@
+{% extends './default-page.html' %} 
+
+{% block content %}
+    
+{% include "./components/header.html" %}
+<main>
+    {% include "./components/aside.html" %}
+    <section id="content">
+        <div class="header-title">
+            <h1 class="bludrk">{{ hospital }}</h1>
+            <!-- <h2 class="gre">{{ hospital }}</h2> -->
+        </div>
+        <div class="content-box shadow2">
+        
+        <div class="rwr">            
+          <select id="listHospitais" value="">
+            <option selected value=""><h1>Selecione Hospital</h1></option>
+            {% for hospital in hospitais %}
+            <option value="{{ hospital.Id }}"><h1>{{ hospital.name }}</h1></option>
+            {% endfor %}
+          </select>
+        </div>  
+        
+            <div class="rwr">
+                <a onclick="popupUti(true)"><i class="fas fa-plus"></i>Adicionar UTI</a>
+            </div>
+        
+            <div class="rw">
+                <table id="datatable">
+                    <thead>
+                        <tr>
+                            <th >UTI</th>
+                            <th style="width: 60px">LEITOS</th>
+                            
+                            <th>EDITAR</th>
+                    <!--    {# start-comment
+                              <th style="width: 130px">Telefone</th>
+                              <th>Endereço</th> 
+                            end-comment#} -->
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}
+{% include "./components/new-uti.html" %}
+{% block scripts %}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
+<script>
+// /local
+// Aqui é atribuido o ID do hospital selecionado.
+// Este id está atribuido ao 'value' do elemento <select> <option>.
+const popupUti = (display) => {
+    if(display) $('#uti-popup').show()
+    else $('#uti-popup').hide()
+}
+
+let idHospital = $('#hospitais').val()
+
+    let table = $('#datatable').DataTable({
+        data: {{ utis | dump | safe }},
+        //EX: {"id":"","Id":"5ba3b2e74cf8a6be651b650e","name":"Hosp test POST","modules":["basic"]}
+        columns: [
+
+            { 'data': 'name'},
+            { 'render': (data, type, row, meta) => {
+                    return {{ leitosQtd }}
+                }
+            },
+            
+            {
+                'data': 'Id', 'render': (data, type, row, meta) => {
+                    return `<a href="/editar/${data}" onclick="popupUti(true)" ><i class="fas fa-edit"></i></a>`
+                }, orderable: false
+            }
+        ],
+        language: {
+            "sEmptyTable": "Nenhum registro encontrado",
+            "sInfo": "_TOTAL_ Resultado(s)",
+            "sInfoEmpty": "0 Resultado",
+            "sInfoFiltered": "de _MAX_ Registro(s)",
+            "sInfoPostFix": "",
+            "sInfoThousands": ".",
+            "sLengthMenu": "Resultados por página _MENU_",
+            "sLoadingRecords": "Carregando...",
+            "sProcessing": "Processando...",
+            "sZeroRecords": "Nenhum registro encontrado",
+            "sSearch": "Pesquisar",
+            "oPaginate": {
+                "sNext": "Próximo",
+                "sPrevious": "Anterior",
+                "sFirst": "Primeiro",
+                "sLast": "Último"
+            },
+            "oAria": {
+                "sSortAscending": ": Ordenar colunas de forma ascendente",
+                "sSortDescending": ": Ordenar colunas de forma descendente"
+            }
+        },
+        dom: '<"top"ilf>t<"bottom"p>'
+    })
+
+    $('.dataTables_info').addClass('col-4')
+    $('.dataTables_length').addClass('col-2')
+    $('.dataTables_filter').addClass('col-5')
+</script>
+{% endblock %}

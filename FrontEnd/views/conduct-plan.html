@@ -1,0 +1,198 @@
+{% extends './default-page.html' %} 
+
+{% block content %}
+
+{% include "./components/header.html" %}
+<main>
+    {% include "./components/aside.html" %}
+    <section id="content" class="rw">
+        <div class="header-title">
+            <h1 class="bludrk">PLANOS A SEGUIR</h1>
+            <h2 class="gre">Planos a serem seguidos.</h2>
+        </div>
+
+        <div>
+
+        {% for leito in leitos %}
+        <a href="#register" id="mframe-card" onclick='popupPlano(true, "{{ leito.uti }}" ,"{{ leito.Id }}", "{{ leito.status }}", "{{ leito.patient }}");'>
+            <div class="mframe-c-tit">
+                <p>{{ leito.name }}<p>
+            </div>
+            <div class="mframe-c-content">
+                <ul>
+                    <li><i class="far fa-check-square"></i> 0/9</li>
+                    <li><i class="far fa-comment"></i> 3</li>
+                    <li><i class="fas fa-paperclip"></i> 2</li>
+                    <li><i class="far fa-bell red"></i></li> <!-- red -->
+                </ul>
+                <div class="date">Atualização: 22/08/18 - 14:57</div>
+            </div>
+        </a>
+        {% endfor %}
+
+        </div>
+    </section>
+</main>
+
+
+{% include "./components/conduct-plan.html" %}
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    var _patientId = "0"
+    var _patient ={}
+    var _idUti = ""
+    var _idLeito= ""
+    var _plist = []
+    var _diaglist = []
+
+    // PopUp novo plano de condutas
+    const popupPlano = (display,idUti,idLeito,status,patient) => {
+        if(display){
+             $('#plano-popup').show()
+             initInterv()
+
+             if(status == "occuped"){
+                if(_plist.length == 0) getPatients("patient")
+             }else{
+                getPatient(patient,(p)=>{
+                    pname = document.getElementById("ipt-patient-name")
+                    //sex = document.querySelector('input[name="genre"]:checked').value
+                    sex = document.getElementsByName('genre')
+                    
+                    if(p.sex == "masc") sex[0].checked = true
+                    else sex[1].checked = true
+                    
+                    document.getElementById('ipt-patient-dtnasc').value = p.dtNasc
+                    document.getElementById("btn-patient-add").disabled = true
+                    
+                    pname.value = p.name
+                    pname.disabled = true
+
+                })
+             }
+             getDtList("dtl-diagnostics","diag-name")
+             //getDtList("diagnostics","diag-name")
+             _idLeito = idLeito
+             _idUti = idUti
+        }
+        else {
+            $('#plano-popup').hide()
+            _idLeito = ""
+            _idUti = ""
+        }
+    }
+
+    // Lista pacientes do hospital
+    const getPatients = (dtList) =>{
+        $.ajax({
+            url:`{{ _server }}/hospital/{{ Idhospital }}/list/patient`,
+            method: 'GET',
+            crossDomain: true,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: (data) => {
+                let htmlResult = ""
+                data.map((user)=>{
+                    htmlResult += `<option value="${user.name}"/>`
+                    _plist.push(user.name)
+                })
+                document.getElementById(dtList).innerHTML = htmlResult
+            }
+        })
+    }
+
+    // Recupera os dados do paciente
+    const getPatient = (idPatient,callback) => {
+        $.ajax({
+            url:`{{ _server }}/patient/${idPatient}`,
+            method: 'GET',
+            crossDomain: true,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: (data) => {
+                _patientId = data.Id
+                _patient = data
+                callback(data)
+            }
+        })
+    }
+
+    // Recupera os nomes de usuarios
+    const getDoctors = (div) => {
+        
+    }
+
+    // Recupera Condutas e preenche DataList
+    const getDtList = (dtList,type) =>{
+        $.ajax({
+            url:`{{ _server }}/conducts/${type}`,
+            method: 'GET',
+            crossDomain: true,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: (data) => {
+                let htmlResult = ""
+                data.map((diag)=>{
+                    htmlResult += `<option value="${diag.name}"/>`
+                })
+                document.getElementById(dtList).innerHTML = htmlResult
+            }
+        })
+    }
+
+    const getInterventions = (callback) =>{
+        $.ajax({
+            url:`{{ _server }}/hospital/{{ Idhospital }}/list/rest/${_idLeito}/intervention`,
+            method: 'GET',
+            crossDomain: true,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: (data) => {
+                callback(data)
+            }
+        })
+    }
+
+    const newIntervention = (utiId,restId,extra,callback)=>{
+        data= JSON.stringify({
+            restId: restId,
+            utiId: utiId,
+            patientId: extra.patientId,
+            hospitalId: "{{ Idhospital }}",
+            name: extra.name,
+            type: extra.type,
+            particularity: extra.particularity,
+            done: "false",
+            archived: "false"
+        })
+
+        $.ajax({
+            url:`{{ _server }}/hospital/{{ Idhospital }}/new/intervention`,
+            method: 'POST',
+            crossDomain: true,
+            xhrFields: {
+                withCredentials: true
+            },
+            dataType: 'json',
+            data,
+            success: (data) => {
+                callback(data)
+            }
+        })
+    }
+
+   $(document).ready(function () {
+     $('.custom-url').attr('href', `/../hospital/{{Idhospital}}/list/uti`);
+   });
+</script>
+
+<script src="/public/js/conduct-plan.js"></script>
+<script src="/public/js/interventions.js"></script>
+{% endblock %}

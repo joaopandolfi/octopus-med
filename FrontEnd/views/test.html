@@ -1,0 +1,95 @@
+{% extends './default-page.html' %} 
+
+{% block content %}
+
+{% include "./components/header.html" %}
+<main>
+    {% include "./components/aside.html" %}
+    <section id="content">
+        <div class="users" style="background-color: white; margin-bottom: 30px;">
+            Usuários:
+            <ul id="users">
+            </ul>
+        </div>
+
+        <div class="messages" style="background-color: white; margin-bottom: 50px;">
+            <ul id="messages">
+            </ul>
+        </div>
+
+        <form id="send">
+            <input id="message" type="text">
+            <button>Enviar</button>
+        </form>
+
+    </section>
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+var username = {{ username | dump | safe }}
+
+var socket = io.connect()
+
+var disconnected = () => {
+    alert('Sua sessão foi expirada, favor efetuar o login novamente')
+    window.location = "/"
+}
+
+if(username) socket.emit('iamhere', {username, room: {{ room | dump | safe }} })
+else{
+    disconnected()
+}
+
+// Sessão perdida
+socket.on('disconnect', disconnected)
+
+// Recebe listagem de usuários no chat
+socket.on('whoshere', function (data) {
+    let users = $('#users')
+    if(users.length){
+        let html = ''
+        for(user of data.users){
+            html += `<li>${user}</li>`
+        }
+        users.html(html)
+    }
+})
+
+
+var makeChatRow = function (data) {
+    var date = new Date(data.timestamp);
+    var display = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds()
+    return `<li>[${display}]<b>${data.from}: </b>${data.message}</li>`
+}
+
+socket.on('new message', function (data) {
+    document.getElementById('messages').innerHTML += makeChatRow(data);
+    var div = $('.messages')[0]
+    setTimeout(div.scrollTop = div.scrollHeight, 1);
+});
+
+socket.on('history', function (data) {
+    var html = ''
+    for (var i = 0, len = data.length; i < len; i++) {
+       html += makeChatRow(data[i])
+    }
+
+    document.getElementById('messages').innerHTML += html
+
+    var div = $('.messages')[0]
+    setTimeout(div.scrollTop = div.scrollHeight, 1);
+});
+
+$('#send').on('submit', (e) => {
+    e.preventDefault()
+    var data = {
+        message: $('#message').val()
+    }
+    socket.emit('message', data);
+    $('#message').val('')
+})
+</script>
+{% endblock %}

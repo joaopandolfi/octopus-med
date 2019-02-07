@@ -1,0 +1,60 @@
+<header>
+    <a href="/local"><img class="logo" src="/public/img/top-logo.png"></a>
+    <div class="dropmenu">
+        <ul>
+            <li class="top-search"><input id="searchbox" type="text" name="search" class="general-search" placeholder="pesquisar"><i id="searchenter" class="fas fa-search"></i></li>
+            <li id="data"></li>
+            <li><a href="#"><img src="/public/img/ic/ic_date.png"></a></li>
+            <li><a href="#">Bryan Lourenço</a></li>
+            <li><img src="/public/img/avatar.png"></li>
+        </ul>
+    </div>
+</header>
+<script type="text/javascript">
+  var month;
+  var currentdate = new Date(); 
+    switch (currentdate.getMonth()+1) {
+      case 1:
+        month = "Janeiro";
+        break;
+      case 2:
+        month = "Fevereiro";
+        break;
+      case 3:
+        month = "Março";
+        break;
+      case 4:
+        month = "Abril";
+        break;
+      case 5:
+        month = "Maio";
+        break;
+      case 6:
+        month = "Junho";
+        break;
+      case 7:
+        month = "Julho";
+        break;
+      case 8:
+        month = "Agosto";
+        break;
+      case 9:
+        month = "Setembro";
+        break;
+      case 10:
+        month = "Outubro";
+        break;
+      case 11:
+        month = "Novembro";
+        break;
+      case 12:
+        month = "Dezembro";
+        break;
+    }
+  var datetime = 
+    currentdate.getDate() + " de "
+    + month  + " de " 
+    + currentdate.getFullYear();
+
+document.getElementById("data").innerHTML = datetime;
+</script>
