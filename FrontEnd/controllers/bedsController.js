@@ -21,7 +21,7 @@ bedsController.GetUTIData = async (req, res) => {
 bedsController.GetHospitalBeds = async (req, res) => {
     let { hospital } = req.params
     req.session.hospital = hospital
-    req.session.uti = null
+    uti = req.session.uti // = null
     var results = await fetch(`${config._server}/hospital/${hospital}/list/rest`, { method: "GET", headers: { cookie: req.headers.cookie } }) //, body , headers: { 'Content-Type': 'application/json' } })
     let data = await results.json()
     req.session.leitos = data || []
