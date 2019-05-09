@@ -55,7 +55,6 @@ function initConducts(callback){
                             </div>
                         </li>`
         })
-        
         callback(open,done)
     })
 }
