@@ -50,30 +50,10 @@
         let hospital = $('#hospitais').val()
         let uti = $('#utis').val()
         if(!hospital) alert('Favor selecionar um hospital')
-        else if(uti){
-            $.ajax({
-                url: `${window.location.origin}/leitos/${hospital}/${uti}`,
-                method: 'POST',
-                error: (e) => {
-                    alert('Houve um erro ao se comunicar com o servidor.')
-                },
-                success: (data) => {
-                    window.location = '/leitos'
-                }
-            })
-        } 
-        else{
-            $.ajax({
-                url: `${window.location.origin}/leitos/${hospital}`,
-                method: 'POST',
-                error: (e) => {
-                    alert('Houve um erro ao se comunicar com o servidor.')
-                },
-                success: (data) => {
-                    window.location = '/leitos'
-                }
-            })
-        } 
+        else if(uti)
+            window.location = `/leitos/${hospital}/${uti}`
+        else
+            window.location = `/leitos/${hospital}`
     }
 
 </script>
