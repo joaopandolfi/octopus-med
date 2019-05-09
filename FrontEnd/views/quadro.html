@@ -14,7 +14,7 @@
         <div>
 
         {% for leito in leitos %}
-        <a href="#register" id="mframe-card" onclick='popupPlano(true, "{{ leito.uti }}" ,"{{ leito.Id }}", "{{ leito.status }}", "{{ leito.patient }}");'>
+        <a href="#register" id="mframe-card" onclick='popupPlano(true, "{{ leito.uti }}" ,"{{ leito.Id }}", "{{ leito.status }}", "{{ leito.patient }}","{{ leito.name }}");'>
             <div class="mframe-c-tit">
                 <p>{{ leito.name }}<p>
             </div>
