@@ -14,22 +14,36 @@
         <div>
 
         {% for leito in leitos %}
-        <a href="#register" id="mframe-card" onclick='popupPlano(true, "{{ leito.uti }}" ,"{{ leito.Id }}", "{{ leito.status }}", "{{ leito.patient }}","{{ leito.name }}");'>
-            <div class="mframe-c-tit">
-                <p>{{ leito.name }}<p>
-            </div>
-            <div class="mframe-c-content">
-                <ul>
-                    <li><i class="far fa-check-square"></i> 0/X</li>
-                    <li><i class="far fa-comment"></i> 0</li>
-                    <li><i class="fas fa-paperclip"></i> 0</li>
-                    <li><i class="far fa-bell red"></i></li> <!-- red -->
-                </ul>
-                <div class="date">Atualização: 01/01/19 - 00:00</div>
-            </div>
-        </a>
-        {% endfor %}
+            {% if leito.status == "occuped" %}
+                <a href="#register" id="mframe-card" onclick='popupPlano(true, "{{ leito.uti }}" ,"{{ leito.Id }}", "{{ leito.status }}", "{{ leito.patient }}","{{ leito.name }}");'>
+                    <div class="mframe-c-tit">
+                        <p>{{ leito.name }}</p>
+                    </div>
+                    <div class="mframe-c-content">
+                        <ul>
+                            <li><i class="far fa-check-square"></i> 0/X</li>
+                            <li><i class="far fa-comment"></i> 0</li>
+                            <li><i class="fas fa-paperclip"></i> 0</li>
+                            <li><i class="far fa-bell red"></i></li> <!-- red -->
+                        </ul>
+                        <div class="date">Atualização: 01/01/19 - 00:00</div>
+                    </div>
+                </a>
 
+            {% else %}
+                <!-- Checo se o leito esta disponível, se n estiver, exibe esse card com o popup de adicionar paciente -->
+                <a href="#" id="mframe-card">
+                    <div class="mframe-c-tit">
+                        <p>{{ leito.name }}</p>
+                        <p>Adicionar Paciente ao Leito</p>
+                    </div>
+                    <div class="mframe-c-content">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                </a>
+            {% endif %}
+        {% endfor %}
+    
         </div>
     </section>
 </main>
