@@ -42,9 +42,10 @@ function initConducts(callback){
                     </li>`
 
             open += `<li class="cl">
-                            <p>${m.name}</p>
+                            <i class="fas fa-caret-right"> ${m.name}</i>
                             <ul class="card-just">
-                            <li><i class="fas fa-caret-right"></i>Adicionado ${m.CreateDateTime}</li>
+                            <br>
+                            <li style="font-size:12px">Adicionado ${m.CreateDateTime}</li>
                             </ul>
                             <div class="rw card-check">
                                 <label class="checks"><input type="checkbox" style="width:28px" onchange="toggle(this,${m.Id})"><span class="checkmark"></span></label>
