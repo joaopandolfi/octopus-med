@@ -62,7 +62,7 @@ function initConducts(callback){
 
 function formateDate(date){
     if(date == "")  return ""
-    return `${date.substring(6,8)}/${date.substring(4,6)}/${date.substring(0,4)} às ${a.substring(8,10)}:${a.substring(10,12)}h`
+    return `${date.substring(6,8)}/${date.substring(4,6)}/${date.substring(0,4)} às ${date.substring(8,10)}:${date.substring(10,12)}h`
 }
 
 function getAndParseInterventions(callBack){
