@@ -1,8 +1,9 @@
+var config = require('../configs/config')
 
 var NavigationController = {}
 
 NavigationController.WorkLocal = (req,res) => {
-    res.render('local.html', { hospitais: req.hospitais })
+    res.render('local.html', { hospitais: req.hospitais, _server_back:config._server_back })
 }
 
 NavigationController.Config = (req, res) => {
