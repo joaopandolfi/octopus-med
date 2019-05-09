@@ -26,6 +26,8 @@ hospitalController.ListUTI = async(req, res) => {
     var results = await fetch(`${config._server}/hospital/${hospital}/list/uti`, { method: "GET", headers: { cookie: req.headers.cookie } })
     let data = await results.json()
     
+    if(leitos == null) leitos = []
+      
     let qtdLeitos = leitos.length;
   
     res.render('list-utis.html', {utis: data, hospital: hospitalName, leitosQtd: qtdLeitos, hospitais: hospitais })

@@ -29,7 +29,7 @@
             $('#utis').hide()
             $.ajax({
                 method:'GET',
-                url: `{{ _client_server }}/hospital/${id}/list/uti`,
+                url: `{{ _server_back }}/hospital/${id}/list/uti`,
                 xhrFields: {
                     withCredentials: true
                 },
