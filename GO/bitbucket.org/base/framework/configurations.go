@@ -60,7 +60,7 @@ func Load() {
 		},
 		Mongo: MongoConfiguration{
 			MongoUrl: "mongodb://teste:teste123@ds263642.mlab.com:63642/medvits-test1",
-			// MongoUrl: "mongodb://127.0.0.1:27017", //"mongodb://teste:teste123@ds263642.mlab.com:63642/medvits-test1",
+			//MongoUrl: "mongodb://127.0.0.1:27017", //"mongodb://teste:teste123@ds263642.mlab.com:63642/medvits-test1",
 			DbName:   "medvits-test1",
 		},
 		Session: SessionConfiguration{

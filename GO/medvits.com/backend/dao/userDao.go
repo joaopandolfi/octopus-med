@@ -64,7 +64,7 @@ func (cc User) Login(user models.User) (logged bool, err error) {
 	session, err := mongo.NewSession()
 	defer session.Close()
 	session.GetCollection("user").Find(bson.M{"username": user.Username}).All(&results)
-
+	
 	fmt.Println(results)
 	logged = false
 	count := len(results)
