@@ -7,7 +7,7 @@ var io = require('socket.io').listen(server)
 var expressSession = require('express-session')
 var cookieParser = require('cookie-parser')
 var bodyParser = require('body-parser')
-var db = require('./db');
+var config = require("./configs/config")
 
 const router = require('./routes');
 
@@ -50,6 +50,6 @@ app.use('/public', express.static('public'));
 app.use('/', router);
 
 // Listen server
-server.listen(3000, function () {
-    console.log('Listening at: 3000')
+server.listen(config._port, function () {
+    console.log(`Listening at: ${config._port}`)
 });

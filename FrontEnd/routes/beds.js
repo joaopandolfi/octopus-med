@@ -3,8 +3,8 @@ var bedsController = require("../controllers/bedsController")
 var authController = require("../controllers/authController")
 
 router.get('/', authController.Auth, bedsController.Table)
-router.post('/:hospital/:uti', authController.Auth, bedsController.GetUTIData)
-router.post('/:hospital', authController.Auth, bedsController.GetHospitalBeds )
+router.get('/:hospital/:uti', authController.Auth, bedsController.GetUTIData)
+router.get('/:hospital', authController.Auth, bedsController.GetHospitalBeds )
 
 
 // router.get('/:hospital/:uti', auth, async(req, res) => {
