@@ -71,9 +71,8 @@
 
                 // MELHORAR SEGURANÇA
                 initConducts((open,done)=>{
-                    console.log(open,done)
-                    $('#open-conducts').innerHTML = open
-                    $('#closed-conducts').innerHTML = done
+                    $('#open-conducts').html(open)
+                    $('#closed-conducts').html(done)
                 })
              }
              
