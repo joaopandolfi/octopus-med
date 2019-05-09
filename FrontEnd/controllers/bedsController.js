@@ -15,7 +15,7 @@ bedsController.GetUTIData = async (req, res) => {
     var results = await fetch(`${config._server}/hospital/${hospital}/list/uti/${uti}/rest`, { method: "GET", headers: { cookie: req.headers.cookie } }) //, body , headers: { 'Content-Type': 'application/json' } })
     let data = await results.json()
     req.session.leitos = data || []
-    res.render('quadro.html', {leitos: data, Idhospital: hospital})
+    res.render('quadro.html', {leitos: data, Idhospital: hospital, _server:config._server})
 }
 
 bedsController.GetHospitalBeds = async (req, res) => {
@@ -25,7 +25,7 @@ bedsController.GetHospitalBeds = async (req, res) => {
     var results = await fetch(`${config._server}/hospital/${hospital}/list/rest`, { method: "GET", headers: { cookie: req.headers.cookie } }) //, body , headers: { 'Content-Type': 'application/json' } })
     let data = await results.json()
     req.session.leitos = data || []
-    res.render('quadro.html', { leitos: data, Idhospital: hospital  })
+    res.render('quadro.html', { leitos: data, Idhospital: hospital, _server:config._server })
 }
 
 module.exports = bedsController

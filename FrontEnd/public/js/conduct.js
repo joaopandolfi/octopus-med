@@ -1,10 +1,10 @@
-var _conduct = {}
+var _conduct = []
 function initConducts(){
-    _conduct = {diagnose:[], dispositive:[], culture: [], micr:[], exam:[], others:[], all:[], today:[], conduct:[], impression:"", lock:false}
+   // _conduct = {diagnose:[], dispositive:[], culture: [], micr:[], exam:[], others:[], all:[], today:[], conduct:[], impression:"", lock:false}
     getAndParseInterventions(()=>{
-        tb = document.getElementById()
+        //tb = document.getElementById()
         aux = ""
-        _conduct.conduct.map(m=>{
+        _conduct.map(m=>{
             aux += `<li class="cl">
                             <p>${m.name}</p>
                             <ul class="card-just">
@@ -18,7 +18,16 @@ function initConducts(){
                             </div>
                         </li>`
                         
+        console.log(aux)
         })
-        tb.innerHTML = aux
+        //tb.innerHTML = aux
     })
+}
+
+function getAndParseInterventions(callBack){
+    getInterventions((data)=>{
+        if(data == null) data = []
+        _conduct = data
+    })
+    callBack()
 }

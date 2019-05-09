@@ -63,7 +63,7 @@
     const popupPlano = (display,idUti,idLeito,status,patient) => {
         if(display){
              $('#plano-popup').show()
-             initInterv()
+             initConducts()
 
              if(status == "occuped"){
                 if(_plist.length == 0) getPatients("patient")
@@ -199,5 +199,5 @@
    });
 </script>
 
-<script src="/public/js/conduct-plan.js"></script>
+<script src="/public/js/conduct.js"></script>
 {% endblock %}
