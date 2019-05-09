@@ -25,6 +25,7 @@ bedsController.GetHospitalBeds = async (req, res) => {
     var results = await fetch(`${config._server}/hospital/${hospital}/list/rest`, { method: "GET", headers: { cookie: req.headers.cookie } }) //, body , headers: { 'Content-Type': 'application/json' } })
     let data = await results.json()
     req.session.leitos = data || []
+    // Gerar relatório por leitos -> Fazer isso no backend e voltar resumo na rota
     res.render('quadro.html', { leitos: data, Idhospital: hospital, _server:config._server })
 }
 

@@ -1,5 +1,5 @@
 <!-- INICIO DO POPUP -->
-<section class="wdw-over" -d="conduct-popup" style="display: none;">
+<section class="wdw-over" id="conduct-popup" style="display: none;">
     <div class="wdw">
         <!-- TOPO DO POPUP -->
         <div class="wdw-top">
@@ -13,63 +13,15 @@
                 <section>
                     <input type="checkbox" id="t-check1" name="c-check" hidden>
                     <label for="t-check1" class="bt-expand">Condutas pendentes <i class="fas fa-angle-down"></i></label>
-                    <ul class="content-check">
-                        <li class="cl">
-                            <p>Título da Conduta</p>
-                            <ul class="card-just">
-                                    <li><i class="fas fa-caret-right"></i> Paciente com falência de acesso vascular - Rafael Melo às 13:40h</li>
-                                    <li><i class="fas fa-caret-right"></i> Solicitar avaliação da cirurgia vascular - Priscilla Aquino às 16:30h</li>
-                            </ul>
-                            <div class="rw card-check">
-                                <label class="checks"><input type="checkbox" checked="checked"><span class="checkmark"></span></label>
-                                <a href="#"><i class="far fa-edit"></i></a>
-                                <a href="#"><i class="fas fa-comments"></i></a>
-                            </div>
-                        </li>
-                        <li class="cl">
-                            <p>Título da Conduta</p>
-                            <ul class="card-just">
-                                <li><i class="fas fa-caret-right"></i> Paciente com falência de acesso vascular - Rafael Melo às 13:40h</li>
-                            </ul>
-                            <div class="rw mgt10 mgb10">
-                                <input type="text" placeholder="Justificar conduta (ao clicar no ícone de edição)"><a class="bt rw mgl10" href="#">Adicionar <i class="fas fa-plus"></i></a>
-                            </div>
-                            <div class="rw card-check">
-                                <label class="checks"><input type="checkbox" checked="checked"><span class="checkmark"></span></label>
-                                <a href="#"><i class="far fa-edit"></i></a>
-                                <a href="#"><i class="fas fa-comments"></i></a>
-                            </div>
-                        </li>
-                        <li class="cl">
-                            <p>Título da Conduta</p>
-                            <ul class="card-just">
-                                    <li><i class="fas fa-caret-right"></i> Paciente com falência de acesso vascular - Rafael Melo às 13:40h</li>
-                                    <li><i class="fas fa-caret-right"></i> Solicitar avaliação da cirurgia vascular - Priscilla Aquino às 16:30h</li>
-                            </ul>
-                            <div class="rw card-check">
-                                <label class="checks"><input type="checkbox" checked="checked"><span class="checkmark"></span></label>
-                                <a href="#"><i class="far fa-edit"></i></a>
-                                <a href="#"><i class="fas fa-comments"></i></a>
-                            </div>
-                        </li>
+                    <ul class="content-check" id="open-conducts">
+                        
                     </ul>
                 </section>
                 <section>
                     <input type="checkbox" id="t-check2" name="c-check" hidden>
-                    <label for="t-check2" class="bt-expand">Condutas conclídas <i class="fas fa-angle-down"></i></label>
-                    <ul class="content-check">
-                        <li class="cl">
-                            <p>Título da Conduta</p>
-                            <ul class="card-just">
-                                    <li><i class="fas fa-caret-right"></i> Paciente com falência de acesso vascular - Rafael Melo às 13:40h</li>
-                                    <li><i class="fas fa-caret-right"></i> Solicitar avaliação da cirurgia vascular - Priscilla Aquino às 16:30h</li>
-                            </ul>
-                            <div class="rw card-check">
-                                <label class="checks"><input type="checkbox" checked="checked"><span class="checkmark"></span></label>
-                                <a href="#"><i class="far fa-edit"></i></a>
-                                <a href="#"><i class="fas fa-comments"></i></a>
-                            </div>
-                        </li>
+                    <label for="t-check2" class="bt-expand">Condutas concluídas <i class="fas fa-angle-down"></i></label>
+                    <ul class="content-check" id="closed-conducts">
+                      
                     </ul>
                 </section>
             

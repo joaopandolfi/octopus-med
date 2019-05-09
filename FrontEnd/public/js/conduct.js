@@ -1,15 +1,52 @@
-var _conduct = []
-function initConducts(){
-   // _conduct = {diagnose:[], dispositive:[], culture: [], micr:[], exam:[], others:[], all:[], today:[], conduct:[], impression:"", lock:false}
+var _conduct = {open:[],done:[]}
+function newConduct(){
+    return {open:[],done:[]}
+}
+
+function initConducts(callback){
     getAndParseInterventions(()=>{
-        //tb = document.getElementById()
-        aux = ""
-        _conduct.map(m=>{
-            aux += `<li class="cl">
+        done = ""
+        open = ""
+        _conduct.done.map(m=>{
+            done += `<li class="cl">
                             <p>${m.name}</p>
                             <ul class="card-just">
-                            <li><i class="fas fa-caret-right"></i> ${m.name} - ${m.particularity[0].doctor} às ${m.particularity[0].hour}</li>
+                            <li><i class="fas fa-caret-right"></i> ${m.name} - ${m.nameUserDone} às ${m.doneDateTime}</li>
                                    <--! <li><i class="fas fa-caret-right"></i> Solicitar avaliação da cirurgia vascular - Priscilla Aquino às 16:30h</li> -->
+                            </ul>
+                        </li>`
+
+                // Checar se vai ser usado
+                a = ` <div class="rw card-check">
+                <label class="checks"><input type="checkbox" checked="checked" onchange="toggle(this,${m.Id})"><span class="checkmark"></span></label>
+                <a href="#" onclick="edit(${m.Id})"><i class="far fa-edit"></i></a>
+                <a href="#"><i class="fas fa-comments"></i></a>
+                </div>`
+        })
+
+        _conduct.open.map(m=>{
+            
+            // TIPO 2
+            open2 = `<li class="cl">
+                        <p>${m.name}</p>
+                        <ul class="card-just">
+                            <li><i class="fas fa-caret-right"></i> Paciente com falência de acesso vascular - medico1 às 13:40h</li>
+                        </ul>
+                        <div class="rw mgt10 mgb10">
+                            <input type="text" placeholder="Justificar conduta (ao clicar no ícone de edição)"><a class="bt rw mgl10" href="#">Adicionar <i class="fas fa-plus"></i></a>
+                        </div>
+                        <div class="rw card-check">
+                            <label class="checks"><input type="checkbox" checked="checked"><span class="checkmark"></span></label>
+                            <a href="#"><i class="far fa-edit"></i></a>
+                            <a href="#"><i class="fas fa-comments"></i></a>
+                        </div>
+                    </li>`
+
+            open += `<li class="cl">
+                            <p>${m.name}</p>
+                            <ul class="card-just">
+                            <li><i class="fas fa-caret-right"></i> ${m.name} - ${m.nameUserDone} às ${m.doneDateTime}</li>
+                                   <--! <li><i class="fas fa-caret-right"></i> Solicitar avaliação da cirurgia vascular - Medico1 às 16:30h</li> -->
                             </ul>
                             <div class="rw card-check">
                                 <label class="checks"><input type="checkbox" checked="checked" onchange="toggle(this,${m.Id})"><span class="checkmark"></span></label>
@@ -17,17 +54,31 @@ function initConducts(){
                                 <a href="#"><i class="fas fa-comments"></i></a>
                             </div>
                         </li>`
-                        
-        console.log(aux)
         })
-        //tb.innerHTML = aux
+        
+        callback(open,done)
     })
+}
+
+function formateDate(date){
+    if(date == "")  return ""
+    return `${date.substring(6,8)}/${date.substring(4,6)}/${date.substring(0,4)} às ${a.substring(8,10)}:${a.substring(10,12)}h`
 }
 
 function getAndParseInterventions(callBack){
     getInterventions((data)=>{
+        _conduct = newConduct()
         if(data == null) data = []
+        data.map(m =>{
+            if(m.archived == "false"){
+                m.CreateDateTime = formateDate(m.CreateDateTime)
+                m.DoneDateTime = formateDate(m.DoneDateTime)
+
+                if(m.done == "true") _conduct.done.push(m)
+                else _conduct.open.push(m)
+            }
+        })
         _conduct = data
+        callBack()
     })
-    callBack()
 }

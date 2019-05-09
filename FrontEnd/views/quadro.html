@@ -21,11 +21,11 @@
             <div class="mframe-c-content">
                 <ul>
                     <li><i class="far fa-check-square"></i> 0/9</li>
-                    <li><i class="far fa-comment"></i> 3</li>
-                    <li><i class="fas fa-paperclip"></i> 2</li>
+                    <li><i class="far fa-comment"></i> 0</li>
+                    <li><i class="fas fa-paperclip"></i> 0</li>
                     <li><i class="far fa-bell red"></i></li> <!-- red -->
                 </ul>
-                <div class="date">Atualização: 22/08/18 - 14:57</div>
+                <div class="date">Atualização: 01/01/19 - 00:00</div>
             </div>
         </a>
         {% endfor %}
@@ -60,60 +60,28 @@
     var _diaglist = []
 
     // PopUp novo plano de condutas
-    const popupPlano = (display,idUti,idLeito,status,patient) => {
+    const popupPlano = (display,idUti,idLeito,status,patient,name) => {
         if(display){
-             $('#plano-popup').show()
-             initConducts()
+            _idLeito = idLeito
+            _idUti = idUti
+            if(status == "occuped"){
+             
+                $('#plano-popup').show()
+                $('#conduct-title').text(`${name} - Plano de Hoje`)
 
-             if(status == "occuped"){
-                if(_plist.length == 0) getPatients("patient")
-             }else{
-                getPatient(patient,(p)=>{
-                    pname = document.getElementById("ipt-patient-name")
-                    //sex = document.querySelector('input[name="genre"]:checked').value
-                    sex = document.getElementsByName('genre')
-                    
-                    if(p.sex == "masc") sex[0].checked = true
-                    else sex[1].checked = true
-                    
-                    document.getElementById('ipt-patient-dtnasc').value = p.dtNasc
-                    document.getElementById("btn-patient-add").disabled = true
-                    
-                    pname.value = p.name
-                    pname.disabled = true
-
+                // MELHORAR SEGURANÇA
+                initConducts((open,done)=>{
+                    $('#open-conducts').innerHTML = open
+                    $('#closed-conducts').innerHTML = done
                 })
              }
-             getDtList("dtl-diagnostics","diag-name")
-             //getDtList("diagnostics","diag-name")
-             _idLeito = idLeito
-             _idUti = idUti
+             
         }
         else {
             $('#plano-popup').hide()
             _idLeito = ""
             _idUti = ""
         }
-    }
-
-    // Lista pacientes do hospital
-    const getPatients = (dtList) =>{
-        $.ajax({
-            url:`{{ _server }}/hospital/{{ Idhospital }}/list/patient`,
-            method: 'GET',
-            crossDomain: true,
-            xhrFields: {
-                withCredentials: true
-            },
-            success: (data) => {
-                let htmlResult = ""
-                data.map((user)=>{
-                    htmlResult += `<option value="${user.name}"/>`
-                    _plist.push(user.name)
-                })
-                document.getElementById(dtList).innerHTML = htmlResult
-            }
-        })
     }
 
     // Recupera os dados do paciente
@@ -133,25 +101,6 @@
         })
     }
 
-    // Recupera Condutas e preenche DataList
-    const getDtList = (dtList,type) =>{
-        $.ajax({
-            url:`{{ _server }}/conducts/${type}`,
-            method: 'GET',
-            crossDomain: true,
-            xhrFields: {
-                withCredentials: true
-            },
-            success: (data) => {
-                let htmlResult = ""
-                data.map((diag)=>{
-                    htmlResult += `<option value="${diag.name}"/>`
-                })
-                document.getElementById(dtList).innerHTML = htmlResult
-            }
-        })
-    }
-
     const getInterventions = (callback) =>{
         $.ajax({
             url:`{{ _server }}/hospital/{{ Idhospital }}/list/rest/${_idLeito}/intervention`,
@@ -160,34 +109,6 @@
             xhrFields: {
                 withCredentials: true
             },
-            success: (data) => {
-                callback(data)
-            }
-        })
-    }
-
-    const newIntervention = (utiId,restId,extra,callback)=>{
-        data= JSON.stringify({
-            restId: restId,
-            utiId: utiId,
-            patientId: extra.patientId,
-            hospitalId: "{{ Idhospital }}",
-            name: extra.name,
-            type: extra.type,
-            particularity: extra.particularity,
-            done: "false",
-            archived: "false"
-        })
-
-        $.ajax({
-            url:`{{ _server }}/hospital/{{ Idhospital }}/new/intervention`,
-            method: 'POST',
-            crossDomain: true,
-            xhrFields: {
-                withCredentials: true
-            },
-            dataType: 'json',
-            data,
             success: (data) => {
                 callback(data)
             }
