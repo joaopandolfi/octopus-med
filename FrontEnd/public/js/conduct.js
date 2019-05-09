@@ -78,7 +78,6 @@ function getAndParseInterventions(callBack){
                 else _conduct.open.push(m)
             }
         })
-        _conduct = data
         callBack()
     })
 }
