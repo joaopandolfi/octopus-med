@@ -5,6 +5,9 @@ var AuthController = {}
 
 AuthController.Auth = async (req, res, next) => {
     var error = false
+    let session = req.session
+    if (!session.username) res.redirect('/login')
+    
     var results = await fetch(`${config._server}/hospital`,
         { method: "GET", headers: { cookie: req.headers.cookie } }).catch(e => {
             error = true
