@@ -16,15 +16,15 @@ Contém controle de procedimentos diários
 
 ### Tecnologias
 1. Linguagens
- 1. Nodejs
- 2. GOlang
+    1. Nodejs
+    2. GOlang
 2. Banco de dados
- 1. MongoDB
- 2. Postgresql
+   1. MongoDB
+   2. Postgresql
 3. Criptografia
- 1. PGP
- 2. SSL
- 3. AES 256
+   1. PGP
+   2. SSL
+   3. AES 256
 
 
 ## Santa data
@@ -35,14 +35,14 @@ Prontuário eletrônico poliglota desenvolvido para Hospitais filantrópicos.
 
 ## Tecnologia
 1. Linguagem
- 1. Nodejs
+   1. Nodejs
 2. Banco de dados
- 1. MongoDB
- 2. Postgresql
- 3. MySQL
+   1. MongoDB
+   2. Postgresql
+   3. MySQL
 3. Criptografia
- 1. SSL
- 2. AES 256
+   1. SSL
+   2. AES 256
 
 
 # Projeto retomado
