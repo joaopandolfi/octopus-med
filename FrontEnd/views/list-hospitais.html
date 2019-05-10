@@ -135,7 +135,7 @@ const popupHospital = (display) => {
       if(idHospital) {
         $.ajax({
           method: 'POST',
-          url: `http://localhost:9092/hospital/${idHospital}/update`,
+          url: `{{ _server }}/hospital/${idHospital}/update`,
           async: true,
           cache: false,
           xhrFields: {
@@ -179,7 +179,7 @@ const popupHospital = (display) => {
       else {
         $.ajax({
           method: 'POST',
-          url: `http://localhost:9092/hospital`,
+          url: `{{ _server }}/hospital`,
           async: true,
           cache: false,
           xhrFields: {
@@ -231,7 +231,7 @@ const popupHospital = (display) => {
       if(data) {
         $.ajax({
           method: 'POST',
-          url: `http://localhost:9092/hospital/${data}/del`,
+          url: `{{ _server }}/hospital/${data}/del`,
           async: true,
           cache: false,
           xhrFields: {

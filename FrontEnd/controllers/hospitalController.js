@@ -5,7 +5,7 @@ var utils = require('../utils/utils')
 var hospitalController = {}
 
 hospitalController.List = (req, res) => {
-    res.render('list-hospitais.html', { hospitais: req.hospitais, aside:utils.getAsideData(req) })
+    res.render('list-hospitais.html', { hospitais: req.hospitais, _server: config._server_back , aside:utils.getAsideData(req) })
 }
 
 hospitalController.ListUTI = async(req, res) => { 
@@ -31,7 +31,7 @@ hospitalController.ListUTI = async(req, res) => {
       
     let qtdLeitos = leitos.length;
   
-    res.render('list-utis.html', {utis: data, hospital: hospitalName, leitosQtd: qtdLeitos, hospitais: hospitais , aside:utils.getAsideData(req)})
+    res.render('list-utis.html', {utis: data, hospital: hospitalName, leitosQtd: qtdLeitos, hospitais: hospitais , _server: config._server_back, aside:utils.getAsideData(req)})
   }
 
 module.exports = hospitalController

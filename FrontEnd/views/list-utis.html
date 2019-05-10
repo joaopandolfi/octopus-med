@@ -47,22 +47,27 @@
         </div>
     </section>
 </main>
-{% endblock %}
 {% include "./components/new-uti.html" %}
+{% include "./components/update-uti.html" %}
+{% endblock %}
 {% block scripts %}
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
 <script>
-// /local
-// Aqui é atribuido o ID do hospital selecionado.
-// Este id está atribuido ao 'value' do elemento <select> <option>.
-const popupUti = (display) => {
-    if(display) $('#uti-popup').show()
-    else $('#uti-popup').hide()
-}
 
-let idHospital = $('#hospitais').val()
+    var _beds = []
+    var _uti = {}
+
+    let idHospital = $('#hospitais').val()
+
+    // /local
+    // Aqui é atribuido o ID do hospital selecionado.
+    // Este id está atribuido ao 'value' do elemento <select> <option>.
+    const popupUti = (display) => {
+        if(display) $('#uti-popup').show()
+        else $('#uti-popup').hide()
+    }
 
     let table = $('#datatable').DataTable({
         data: {{ utis | dump | safe }},
@@ -77,7 +82,7 @@ let idHospital = $('#hospitais').val()
             
             {
                 'data': 'Id', 'render': (data, type, row, meta) => {
-                    return `<a href="/editar/${data}" onclick="popupUti(true)" ><i class="fas fa-edit"></i></a>`
+                    return `<a onclick="updateUTI(${data})" ><i class="fas fa-edit"></i></a>`
                 }, orderable: false
             }
         ],
@@ -110,5 +115,138 @@ let idHospital = $('#hospitais').val()
     $('.dataTables_info').addClass('col-4')
     $('.dataTables_length').addClass('col-2')
     $('.dataTables_filter').addClass('col-5')
+
+    // Control functions
+
+    const updateUTI = (id) => {
+      popupUti(true)
+      idUTI = id
+      let uti = utis.find((uti) => {
+        if (uti.Id == id) return true
+      });
+
+      // Update popup values
+      $('#name').val(uti.name)
+      $('#hospital').val(uti.hospital)
+      
+      // Preencher table
+      $('#leitos').val(uti.leitos)
+    }
+
+    const saveUpdateUTI = () => {
+        sendUpdateUTI(idHospital,_uti.id,_uti,(result)=>{
+            alert(result)
+        })
+    }
+
+    const saveNewBed = () => {
+        // Get and parse data
+        let data = JSON.stringify({
+            name: $('#bed-name').val(),
+            status: "free",
+            patient: "0",
+            number: "1"
+         })
+
+        newBed(idHospital,_uti.id,data,(result)=>{
+            alert(result)
+        })
+    }
+
+    const saveUpdateBed = () => {
+        // Get and parse data
+        let data = JSON.stringify({
+            name: $('#bed-name').val(),
+            status: "free",
+            patient: "0",
+            number: "1"
+         })
+
+        updateBed(idHospital,_uti.id,data,(result)=>{
+            alert(result)
+        })
+    }
+
+    // Do update UTI
+    const sendUpdateUTI = (idHospital,idUTI,data,callback) => {
+        $.ajax({
+          method: 'POST',
+          url: `{{ _server }}/hospital/${idHospital}/update/uti/${idUTI}`,
+          async: true,
+          cache: false,
+          xhrFields: {
+            withCredentials: true
+          },
+          dataType: 'json',
+          data,
+          success: (data) => {
+            // Limpar formulário
+          },
+          error: (jqXHR, textStatus, errorThrown) => {
+            setTimeout(()=> {
+              console.error(jqXHR, textStatus, errorThrown);
+              alert(`Não foi possível atualizar a UTI '${data.name}'`);
+            }, 1000);
+          },
+          complete: (data) => {
+            callback(data)
+          },
+        })
+    }
+
+    // Do update bed data
+    const updateBed = (idHospital,idLeito,data,callback) => {
+        $.ajax({
+          method: 'POST',
+          url: `{{ _server }}/hospital/${idHospital}/update/rest/${idLeito}`,
+          async: true,
+          cache: false,
+          xhrFields: {
+            withCredentials: true
+          },
+          dataType: 'json',
+          data,
+          success: (data) => {
+            // Limpar formulário
+          },
+          error: (jqXHR, textStatus, errorThrown) => {
+            setTimeout(()=> {
+              console.error(jqXHR, textStatus, errorThrown);
+              alert(`Não foi possível atualizar o leito '${data.name}'`);
+            }, 1000);
+          },
+          complete: (data) => {
+            callback(data)
+          },
+        })
+    }
+
+    // Create new bed on UTI
+    const newBed = (idHospital,idUTI,idUser,data,callback) => {
+        $.ajax({
+          method: 'POST',
+          url: `{{ _server }}/hospital/${idHospital}/new/uti/${idUTI}/rest`,
+          async: true,
+          cache: false,
+          xhrFields: {
+            withCredentials: true
+          },
+          dataType: 'json',
+          data,
+          success: (data) => {
+            $('#bed-name').val("")
+          },
+          error: (jqXHR, textStatus, errorThrown) => {
+            setTimeout(()=> {
+              console.error(jqXHR, textStatus, errorThrown);
+              alert(`Não foi possível adicionar o leito '${data.name}'`);
+            }, 1000);
+          },
+          complete: (data) => {
+            callback(data)
+          },
+        })
+    }
+
 </script>
 {% endblock %}

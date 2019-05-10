@@ -24,7 +24,7 @@ ActionsController.GetBedConductions = async(req, res) => {
     var results = await fetch(`${config._server}/hospital/${hospital}/list/rest`, { method: "GET", headers: { cookie: req.headers.cookie } }) //, body , headers: { 'Content-Type': 'application/json' } })
     let data = await results.json()
     req.leitos = data
-    res.render('conduct-plan.html', { leitos: data, Idhospital: hospital ,aside:utils.getAsideData(req) })
+    res.render('conduct-plan.html', { leitos: data, Idhospital: hospital ,aside:utils.getAsideData(req), _server: config._server_back })
 }
 
 module.exports = ActionsController

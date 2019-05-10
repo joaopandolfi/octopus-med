@@ -1,0 +1,27 @@
+<section id="uti-popup" class="wdw-over" style="display: none;">
+    <div class="wdw">
+        <div class="wdw-top">
+            <p>Editar UTI</p><a onclick="popupUti(false)"><i class="fas fa-times"></i></a>
+        </div>
+        <div class="wdw-content">
+            <div class="row">
+                <div class="col-6">
+                    <label>UTI</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                <div class="col-6">
+                    <label>Hospital</label>
+                    <input type="text" id="hospital" name="hospital">
+                </div>
+                <div class="col-6">
+                    <label>Leitos</label>
+                    <input type="text" id="leitos" name="leitos">
+                </div>
+              
+            <div class="row">
+                <button type="button" class="btgreen" onclick="saveUpdateUti();"><i class="fas fa-check"></i>Salvar</button> 
+                <button type="button" class="btgrey" onclick="popupUti(false)"><i class="fas fa-times"></i>Cancelar</button> <button type="button" class="btred"><i class="fas fa-trash-alt"></i>Deletar</button>
+            </div>
+        </div>
+    </div>
+</section>
