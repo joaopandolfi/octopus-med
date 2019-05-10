@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/esudbrack/medsys-client.git"
+    "url": "git+ssh://git@github.com/joaopandolfi/octopuslab.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://gitlab.com/esudbrack/medsys-client/issues"
+    "url": "https://github.com/joaopandolfi/octopuslab/issues"
   },
-  "homepage": "https://gitlab.com/esudbrack/medsys-client#README",
+  "homepage": "https://github.com/esudbrack/octopuslab#README",
   "dependencies": {
     "assert": "^1.4.1",
     "body-parser": "^1.18.3",

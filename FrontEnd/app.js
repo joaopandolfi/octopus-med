@@ -2,6 +2,7 @@ const express = require('express');
 require('express-async-errors');
 const app = express();
 const nunjucks = require('nunjucks');
+var helmet = require('helmet')
 var server = require('http').createServer(app)
 var io = require('socket.io').listen(server)
 var expressSession = require('express-session')
@@ -30,6 +31,9 @@ app.use(bodyParser.urlencoded({
     extended: true
 }))
 app.use(bodyParser.json())
+
+// Security
+app.use(helmet())
 
 // Session
 app.use(expressSession({
