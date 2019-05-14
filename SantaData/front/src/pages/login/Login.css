@@ -1,0 +1,411 @@
+body{
+    background-attachment: fixed;
+   /* text-align: center;*/
+}
+
+.LoginForm input {
+    outline: none;
+
+}
+
+.LoginForm textarea {
+  outline: none;
+  border: none;
+}
+
+.LoginForm textarea:focus, input:focus {
+  border-color: transparent !important;
+
+}
+
+/**/
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+input:focus::-moz-placeholder { color:transparent; }
+input:focus:-ms-input-placeholder { color:transparent; }
+
+textarea:focus::-webkit-input-placeholder { color:transparent; }
+textarea:focus:-moz-placeholder { color:transparent; }
+textarea:focus::-moz-placeholder { color:transparent; }
+textarea:focus:-ms-input-placeholder { color:transparent; }
+
+input::-webkit-input-placeholder { color: #acacac; }
+input:-moz-placeholder { color: #acacac; }
+input::-moz-placeholder { color: #acacac; }
+input:-ms-input-placeholder { color: #acacac; }
+
+textarea::-webkit-input-placeholder { color: #acacac; }
+textarea:-moz-placeholder { color: #acacac; }
+textarea::-moz-placeholder { color: #acacac; }
+textarea:-ms-input-placeholder { color: #acacac; }
+
+/*---------------------------------------------*/
+button {
+    outline: none !important;
+    border: none;
+    background: transparent;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.LoginPage {
+    background-color: #1ca4fc;
+    overflow: hidden;
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+
+}
+
+/*LOGIN BOX NEEDS TO BE RESPONSIVE*/
+
+.loginBox {
+    background-color: #FFF;
+    width: 400px;
+    margin: 5% auto auto 33%;
+    border-radius: 30px;
+    position: absolute;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 30px;
+}
+/* MEDIA LOGIN BOX*/
+
+@media (min-width: 576px) {
+  .loginBox {
+    margin: 5% auto auto 33%;
+  }
+}
+
+@media (min-width: 768px) {
+  .loginBox{
+    margin: 5% auto 5% 19%;
+  }
+}
+
+@media (min-width: 992px) {
+  .loginBox {
+    margin: 5% auto auto 33%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .loginBox{
+    margin: 5% auto auto 33%;
+  }
+}
+
+
+
+.loginHead {
+    height: 100px;
+    width: 40%;
+    background-image: url("../img/SANTADATA.svg");
+    margin: 50px auto 0 auto;
+    color: white;
+    background-repeat: no-repeat;
+}
+
+.textInput{
+    font-family: Lato;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #1ca4fc;
+    display: block;
+ /*   width: 100%;*/
+    height: 62px;
+    border-radius: 10px;
+    border: 2px solid #1ca4fc;
+    padding: 0 30px 0 65px;
+    outline: none;
+}
+
+#LoginButton{
+    font-family: Lato;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+    text-transform: uppercase;
+    width: 100%;
+    height: 62px;
+    border-radius: 6px;
+    border-color: transparent;
+    background: #1ca4fc;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    margin-bottom: 30px;
+    padding: 0 30px 0 30px;
+    outline: none;
+}
+
+.remember{
+    font-size: 16px;
+    color: #999999;
+    line-height: 1.2;
+    display: block;
+    position: relative;
+    padding-left: 10px;
+    cursor: pointer;
+    padding-bottom: 10px;
+
+}
+
+.check{
+    display: inline-block;
+}
+
+a{
+    text-decoration: none;
+}
+
+#Signup{
+    outline: none;
+    font-size: 16px;
+    color: #1eabf9;
+    line-height: 1.4;
+}
+
+.text-align{
+    text-align: center!important;
+}
+
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ Utility ]*/
+.txt1 {
+  font-family: 'Lato';
+  font-size: 16px;
+  color: #1eabf9;
+  line-height: 1.4;
+}
+
+
+.hov1:hover {
+  border-color: #1ca4fc;
+}
+
+/*------------------------------------------------------------------
+[  ]*/
+.login100-form {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+
+/*---------------------------------------------*/
+.wrap-input100 {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.input100 {
+  font-family: Lato;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #1ca4fc;
+  display: block;
+  width: 100%;
+  height: 62px;
+  border-radius: 10px;
+  border: 2px solid #1ca4fc;
+  padding: 0 30px 0 65px;
+}
+
+
+/*------------------------------------------------------------------
+[ Focus ]*/
+.focus-input100 {
+  display: block;
+  position: absolute;
+  border-radius: 30px;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 0px 0px;
+  color: #1eabf9;
+}
+
+.input100:focus + .focus-input100 {
+  -webkit-animation: anim-shadow 0.5s ease-in-out forwards;
+  animation: anim-shadow 0.5s ease-in-out forwards;
+}
+
+@-webkit-keyframes anim-shadow {
+  to {
+    box-shadow: 0px 0px 60px 20px;
+    opacity: 0;
+  }
+}
+
+@keyframes anim-shadow {
+  to {
+    box-shadow: 0px 0px 60px 20px;
+    opacity: 0;
+  }
+}
+
+.symbol-input100 {
+  font-size: 24px;
+  color: #1eabf9;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  border-radius: 25px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 23px;
+  padding-bottom: 5px;
+  pointer-events: none;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.input100:focus + .focus-input100 + .symbol-input100 {
+  color: #1ca4fc;
+  padding-left: 18px;
+}
+
+/*------------------------------------------------------------------
+[ Alert validate ]*/
+
+.validate-input {
+  position: relative;
+}
+
+.alert-validate::before {
+  content: attr(data-validate);
+  position: absolute;
+  max-width: 70%;
+  background-color: white;
+  border: 1px solid #c80000;
+  border-radius: 3px;
+  padding: 4px 25px 4px 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 8px;
+  pointer-events: none;
+
+  font-family: Raleway-SemiBold;
+  color: #c80000;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+
+  visibility: hidden;
+  opacity: 0;
+
+  -webkit-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+
+.alert-validate::after {
+  content: "\f12a";
+  font-family: FontAwesome;
+  display: block;
+  position: absolute;
+  color: #c80000;
+  font-size: 15px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 13px;
+}
+
+.alert-validate:hover:before {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 992px) {
+  .alert-validate::before {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ responsive ]*/
+
+@media (max-width: 480px) {
+  .wrap-login100 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+
+/* THIS PADDING NEEDS TO FUCKIN WORK */
+.m-b-16{
+    margin-bottom: 16px;
+
+}
+
+
+
+/*WRAP THE CONTENT MY NIGGA*/
+
+.container-login100 {
+  width: 100%;  
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: #1ca4fc;
+  position: relative;
+  z-index: 1;
+  float: left;
+
+}
+
+
+
+

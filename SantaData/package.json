@@ -1,0 +1,31 @@
+{
+  "name": "octopus-med",
+  "version": "1.0.0",
+  "description": "Octopus Med Prontuário eletrônico",
+  "main": "rest/app.js",
+  "scripts": {
+    "start": "echo \" Use: npm run-script <SCRIPT_START> => rest-start or front-start \"",
+    "rest-start": "cd rest && node app.js",
+    "front-start": "cd front && react-scripts start",
+    "front-build": "cd front && react-scripts build",
+    "front-test": "cd front && react-scripts test --env=jsdom",
+    "front-eject": "cd front && react-scripts eject",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "João Carlos Pandolfi Santana",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "buffer": "^5.0.8",
+    "express": "^4.16.1",
+    "helmet": "^3.12.0",
+    "https": "^1.0.0",
+    "mongodb": "^2.2.34",
+    "morgan": "^1.9.0",
+    "mysql": "^2.14.1",
+    "node-webhooks": "^1.2.4",
+    "pg": "^7.4.1",
+    "superagent": "^3.8.2"
+  }
+}

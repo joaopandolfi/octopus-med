@@ -1,0 +1,97 @@
+
+.NewConsult .consultSection{
+    color: #1ca4fc;
+	width: 800px;
+    margin: 5% auto 5% 0px;
+    margin-left: auto;
+    margin-right: auto;
+	border-radius: 30px;
+    justify-content: space-between;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 30px;
+    justify-content: center;
+    background: #fff;
+    font-family: Lato;
+}
+
+.NewConsult .sections {
+    padding-left: 50px;
+    color: #fff;
+}
+
+.NewConsult h2, .NewConsult h3{
+    text-align: center;
+    color: black;
+}
+
+.NewConsult h3{
+    padding-top: 25px;
+}
+
+.NewConsult input{
+    font-family: Lato;
+    font-size: 18px;
+    line-height: 1.2;
+    border-radius: 10px;
+    border: 1px solid #1ca4fc;
+    outline: none;
+    padding: 0 30px 0 65px;
+    background: #fff;
+}
+
+.NewConsult #SaveConsult {
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 6px;
+    border-color: transparent;
+    background: #1ca4fc;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px 0 30px;
+    float: right;
+}
+
+.NewConsult textarea {
+    width: 100%;
+    font-family: Lato;
+    font-size: 18px;
+    line-height: 1.2;
+    border-radius: 10px;
+    border: 1px solid #1ca4fc;
+    outline: none;
+}
+
+.NewConsult .Button{
+	font-family: Lato;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+    text-transform: uppercase;
+    width: 50%;
+    height: 62px;
+    border-radius: 6px;
+    border-color: transparent;
+    background: #1ca4fc;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 30px 0 30px;
+    outline: none;
+}

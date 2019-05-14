@@ -1,0 +1,285 @@
+.wrap {
+    background: #1ca4fc!important;
+    position: absolute;
+    min-height: 100vh;
+    width: 100%;
+    background-size: cover;
+
+
+}
+
+.NewPatient h2{
+	text-align: center;
+}
+
+.NewPatient input{
+     color: #1ca4fc;
+}
+
+/*----------IMPORTANT---------- DONT TOUCH THIS GUYS HAHA LUDMYLA IS WARNING YOU*/
+
+
+.NewPatient input {
+    outline: none;
+
+}
+
+.NewPatient textarea {
+  outline: none;
+  border: none;
+}
+
+.NewPatient textarea:focus, input:focus {
+  border-color: transparent !important;
+
+}
+
+/**/
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+input:focus::-moz-placeholder { color:transparent; }
+input:focus:-ms-input-placeholder { color:transparent; }
+
+textarea:focus::-webkit-input-placeholder { color:transparent; }
+textarea:focus:-moz-placeholder { color:transparent; }
+textarea:focus::-moz-placeholder { color:transparent; }
+textarea:focus:-ms-input-placeholder { color:transparent; }
+
+input::-webkit-input-placeholder { color: #acacac; }
+input:-moz-placeholder { color: #acacac; }
+input::-moz-placeholder { color: #acacac; }
+input:-ms-input-placeholder { color: #acacac; }
+
+textarea::-webkit-input-placeholder { color: #acacac; }
+textarea:-moz-placeholder { color: #acacac; }
+textarea::-moz-placeholder { color: #acacac; }
+textarea:-ms-input-placeholder { color: #acacac; }
+
+/*---------------------------------------------*/
+button {
+    outline: none !important;
+    border: none;
+    background: transparent;
+
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/*------------------------------------*/
+.NewPatient{
+	color: #1ca4fc;
+	width: 500px;
+    margin: 5% auto 5% 0px;
+	border-radius: 30px;
+    justify-content: space-between;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 30px;
+    padding-top: 25px;
+    justify-content: center;
+    background: #fff;
+    font-family: Lato;
+
+}
+
+/* MEDIA NewPatient */
+
+@media (min-width: 576px) {
+  .NewPatient {
+    margin: 5% auto auto 33%;
+  }
+}
+
+@media (min-width: 768px) {
+  .NewPatient{
+    margin: 5% auto auto 20%;
+  }
+}
+
+@media (min-width: 992px) {
+  .NewPatient {
+    margin: 5% auto 5% 27%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .NewPatient{
+    margin: 5% auto 5% 30%;
+  }
+}
+.NewPatient input{
+	font-family: Lato;
+    font-size: 18px;
+    line-height: 1.2;
+    height: 62px;
+    border-radius: 10px;
+    border: 2px solid #1ca4fc;
+    display: flex;
+    outline: none;
+    width: 100%;
+
+   
+}
+
+.NewPatient form input{
+    padding: 0 30px 0 65px;
+}
+
+
+#birthDate{
+    color: #999;
+    
+}
+
+.NewPatient .Button{
+	font-family: Lato;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+    text-transform: uppercase;
+    width: 100%;
+    height: 62px;
+    border-radius: 10px;
+    background: #1ca4fc;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    
+}
+
+#gender{
+	font-size: 18px;
+    display: inline-block;
+    color: initial;
+    width: auto;
+    height: 30px;
+    margin-left: 30px;
+}
+
+/*.NewPatientHead {
+    height: 100px;
+    width: 50%;
+    background-image: url("../img/SANTADATA.svg");
+    margin: 0px auto 20px auto;
+    background-repeat: no-repeat;
+}*/
+
+/*.same-line{
+    display: table;
+}
+
+.same-line-table{
+    display: table-cell;
+}*/
+
+#Up{
+    font-size: 20px;
+}
+
+#ethnicity{
+    margin-left: 30px;
+    font-size: 18px;
+    border: 2px solid #1ca4fc;
+    background-color: #fff;
+}
+
+
+/*---------------------------------------------*/
+.NewPatient .wrap-input100 {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.NewPatient .input100 {
+  font-family: Lato;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #1ca4fc;
+  display: block;
+  width: 100%;
+  height: 62px;
+  border-radius: 10px;
+  border: 2px solid #1ca4fc;
+  padding: 0 30px 0 65px;
+}
+
+
+/*------------------------------------------------------------------
+[ Focus ]*/
+.NewPatient .focus-input100 {
+  display: block;
+  position: absolute;
+  border-radius: 30px;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 0px 0px;
+  color: #1eabf9;
+}
+
+.NewPatient .input100:focus + .focus-input100 {
+  -webkit-animation: anim-shadow 0.5s ease-in-out forwards;
+  animation: anim-shadow 0.5s ease-in-out forwards;
+}
+
+@-webkit-keyframes anim-shadow {
+  to {
+    box-shadow: 0px 0px 60px 20px;
+    opacity: 0;
+  }
+}
+
+@keyframes anim-shadow {
+  to {
+    box-shadow: 0px 0px 60px 20px;
+    opacity: 0;
+  }
+}
+
+.NewPatient .symbol-input100 {
+  font-size: 24px;
+  color: #1eabf9;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  border-radius: 25px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 23px;
+  padding-bottom: 5px;
+  pointer-events: none;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.NewPatient .input100:focus + .focus-input100 + .symbol-input100 {
+  color: #1ca4fc;
+  padding-left: 18px;
+}
+
+#Save{
+      padding: 0!important;
+}

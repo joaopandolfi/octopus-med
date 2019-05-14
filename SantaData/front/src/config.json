@@ -1,0 +1,19 @@
+{
+  "rest": {
+    "baseURL": "https://31.220.54.251:8443/",
+    "routes": {
+      "login":"auth/login/",
+      "newPatient":"gen/new/patient/",
+      "searchPatient":"",
+      "getPatient":"gen/get/patient",
+      "newConsult":"gen/new/consult/",
+      
+      "prepAnamnese":"prepare/anamnese/",
+      "prepEvidences":"prepare/evidences/",
+      "prepInterventions":"prepare/interventions/",
+      "prepMedicines":"prepare/medicines/",
+      "prepPredictors":"prepare/predictors/",
+      "prepPrevention":"prepare/prevention/"
+    }
+  }
+}

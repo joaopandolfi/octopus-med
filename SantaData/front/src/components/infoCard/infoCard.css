@@ -1,0 +1,14 @@
+.InfoCard .patientImg{
+	height: 150px;
+	width: 150px;
+	float: left;
+	margin-right: 20px!important;
+
+	
+}
+
+.InfoCard h4{
+	color: #1ca4fc;
+
+}
+

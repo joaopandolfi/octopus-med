@@ -1,0 +1,205 @@
+.SearchPatient{
+	background: #1ca4fc;
+    position: absolute;
+    min-height: 100vh;
+    width: 100%;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+.SearchPatient label{
+	margin-left: 20px!important;
+    text-decoration: none;
+    display: inline-block;
+    color: #1ca4fc;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: inherit;
+    outline: none;
+}
+
+.SearchPatient h1{
+	width: 300px;
+}
+
+.SearchPatient .patientName{
+	
+    font-family: Lato;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #1ca4fc;
+    width: 400px; 
+    height: 55px;
+    border-radius: 30px;
+    border: 2px solid #1ca4fc;
+    padding: 0 30px 0 65px;
+    outline: none;
+
+}
+
+.SearchPatient form{
+	display: inherit;
+}
+
+/*---------------------------------------------*/
+.SearchPatient .wrap-input100 {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  margin: 5% auto auto 33%;
+}
+
+/* MEDIA SEARCH BOX*/
+
+@media (min-width: 576px) {
+  .SearchPatient .wrap-input100 {
+    margin: 5% auto auto 33%;
+  }
+}
+
+@media (min-width: 768px) {
+  .SearchPatient .wrap-input100{
+    margin: 5% auto 5% 19%;
+  }
+}
+
+@media (min-width: 992px) {
+  .SearchPatient .wrap-input100 {
+    margin: 5% auto auto 33%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .SearchPatient .wrap-input100{
+    margin: 5% auto auto 33%;
+  }
+}
+
+.SearchPatient .input100 {
+  font-family: Lato;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #1ca4fc;
+  display: block;
+  width: 100%;
+  height: 62px;
+  border-radius: 10px;
+  border: 2px solid #1ca4fc;
+  padding: 0 30px 0 65px;
+}
+
+/*------------------------------------------------------------------
+[ Focus ]*/
+.SearchPatient .focus-input100 {
+  display: block;
+  position: absolute;
+  border-radius: 30px;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 0px 0px;
+  color: #1eabf9;
+}
+
+.SearchPatient .input100:focus + .focus-input100 {
+  -webkit-animation: anim-shadow 0.5s ease-in-out forwards;
+  animation: anim-shadow 0.5s ease-in-out forwards;
+}
+
+@-webkit-keyframes anim-shadow {
+  to {
+    box-shadow: 0px 0px 60px 20px;
+    opacity: 0;
+  }
+}
+
+@keyframes anim-shadow {
+  to {
+    box-shadow: 0px 0px 60px 20px;
+    opacity: 0;
+  }
+}
+
+.SearchPatient .symbol-input100 {
+  font-size: 24px;
+  color: #1eabf9;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  border-radius: 25px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 23px;
+  padding-bottom: 5px;
+  pointer-events: none;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.SearchPatient .input100:focus + .focus-input100 + .symbol-input100 {
+  color: #1ca4fc;
+  padding-left: 18px;
+}
+
+.SearchPatient  input {
+    outline: none;
+
+}
+.SearchPatient  textarea {
+  outline: none;
+  border: none;
+}
+
+.SearchPatient  textarea:focus, input:focus {
+  border-color: transparent !important;
+
+}
+
+.button-size{
+    font-size: 2em;
+    color: white;
+}
+/**/
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+input:focus::-moz-placeholder { color:transparent; }
+input:focus:-ms-input-placeholder { color:transparent; }
+
+textarea:focus::-webkit-input-placeholder { color:transparent; }
+textarea:focus:-moz-placeholder { color:transparent; }
+textarea:focus::-moz-placeholder { color:transparent; }
+textarea:focus:-ms-input-placeholder { color:transparent; }
+
+input::-webkit-input-placeholder { color: #acacac; }
+input:-moz-placeholder { color: #acacac; }
+input::-moz-placeholder { color: #acacac; }
+input:-ms-input-placeholder { color: #acacac; }
+
+textarea::-webkit-input-placeholder { color: #acacac; }
+textarea:-moz-placeholder { color: #acacac; }
+textarea::-moz-placeholder { color: #acacac; }
+textarea:-ms-input-placeholder { color: #acacac; }
+
+/*---------------------------------------------*/
+button {
+    outline: none !important;
+    border: none;
+    background: transparent;
+
+}
+
+button:hover {
+    cursor: pointer;
+}
+
