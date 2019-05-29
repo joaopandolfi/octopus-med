@@ -11,6 +11,10 @@ type Rest struct {
 	UserID   string        `json:"userId"`
 	Status   string        `json:"status"`
 	Patient  string        `json:"patient"`
+	Files	 string		   `json:"files"`
+	Messages string		   `json:"messages"`
+	Tasks	 int		   `json:"tasks"`
+	Dones	 int 		   `json:"dones"`
 	//Patient  map[string]string `json:"patient"`
 	//Intervent []Interventions   `json:"interventions"`
 	//Intervents []map[string]string `json:"interventions"` //Generico
